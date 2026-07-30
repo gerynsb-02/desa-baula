@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Layout from '../../components/Layout'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
@@ -421,8 +421,8 @@ export default function Layanan() {
     <div className='pt-15'>
     <Layout title="Layanan Publik">
       <Head>
-        <meta name="description" content="Layanan publik Kelurahan Balleangin - Pengajuan surat menyurat dan administrasi kependudukan" />
-        <meta name="keywords" content="layanan publik, surat keterangan, administrasi, kelurahan Balleangin" />
+        <meta name="description" content="Layanan publik Desa Baula - Pengajuan surat menyurat dan administrasi kependudukan" />
+        <meta name="keywords" content="layanan publik, surat keterangan, administrasi, desa Baula" />
       </Head>
 
       {/* Hero Section */}
@@ -445,7 +445,7 @@ export default function Layanan() {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4"
           >
-            <span className="hidden sm:inline">Layanan Publik Kelurahan Balleangin</span>
+            <span className="hidden sm:inline">Layanan Publik Desa Baula</span>
             <span className="sm:hidden">Layanan Publik</span>
           </motion.h1>
           <motion.p
@@ -454,7 +454,7 @@ export default function Layanan() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-sm sm:text-lg lg:text-xl text-green-100 max-w-3xl mx-auto"
           >
-            Informasi dan pengajuan layanan administrasi Kelurahan Balleangin
+            Informasi dan pengajuan layanan administrasi Desa Baula
           </motion.p>
         </div>
       </div>
@@ -493,7 +493,7 @@ export default function Layanan() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-gray-600 text-xs sm:text-sm lg:text-base max-w-3xl mx-auto"
               >
-                Berbagai jenis layanan administrasi yang tersedia untuk memenuhi kebutuhan warga Kelurahan Balleangin
+                Berbagai jenis layanan administrasi yang tersedia untuk memenuhi kebutuhan warga Desa Baula
               </motion.p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">

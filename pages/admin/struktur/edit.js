@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { doc, getDoc, updateDoc } from 'firebase/firestore'
-import { ref, deleteObject } from 'firebase/storage'
-import { db, storage } from '../../../lib/firebase'
-import { uploadImage } from '../../../lib/uploadImage'
+import { db } from '../../../lib/firebase'
+import { uploadImage, deleteImage } from '../../../lib/uploadCloudinary'
 import RequireAuth from '../../../components/RequireAuth'
 import AdminLayout from '../../../components/AdminLayout'
 import Link from 'next/link'
@@ -89,12 +88,7 @@ export default function EditStruktur() {
 
       // If user wants to remove current photo
       if (removeCurrentPhoto && fotoPath) {
-        try {
-          const imageRef = ref(storage, fotoPath)
-          await deleteObject(imageRef)
-        } catch (error) {
-          console.error('Error deleting old image:', error)
-        }
+        await deleteImage(fotoPath)
         fotoUrl = ''
         newFotoPath = ''
       }
@@ -103,12 +97,7 @@ export default function EditStruktur() {
       if (fotoFile) {
         // Delete old photo if exists
         if (fotoPath && !removeCurrentPhoto) {
-          try {
-            const imageRef = ref(storage, fotoPath)
-            await deleteObject(imageRef)
-          } catch (error) {
-            console.error('Error deleting old image:', error)
-          }
+          await deleteImage(fotoPath)
         }
         
         const imageData = await uploadImage(fotoFile, 'struktur')

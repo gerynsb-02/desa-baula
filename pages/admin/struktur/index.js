@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore'
-import { ref, deleteObject } from 'firebase/storage'
-import { db, storage } from '../../../lib/firebase'
+import { db } from '../../../lib/firebase'
+import { deleteImage } from '../../../lib/uploadCloudinary'
 import AdminLayout from '../../../components/AdminLayout'
 import RequireAuth from '../../../components/RequireAuth'
 import Link from 'next/link'
@@ -41,8 +41,7 @@ export default function StrukturIndex() {
     if (confirm('Yakin ingin menghapus data ini?')) {
       try {
         if (path) {
-          const imageRef = ref(storage, path)
-          await deleteObject(imageRef)
+          await deleteImage(path)
         }
         await deleteDoc(doc(db, 'struktur', id))
         setStrukturList(strukturList.filter(item => item.id !== id))

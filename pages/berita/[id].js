@@ -61,7 +61,7 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
   }, [slug])
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
-  const shareText = berita ? `${berita.judul} - Kelurahan Balleangin` : ''
+  const shareText = berita ? `${berita.judul} - Desa Baula` : ''
 
   const handleShare = (platform) => {
     let url = ''
@@ -243,7 +243,7 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
              <Layout 
          title={berita.judul}
          description={berita.isi.substring(0, 160) + '...'}
-         keywords={`${berita.judul}, berita kelurahan balleangin, ${berita.kategori || 'informasi kelurahan'}, kelurahan balleangin`}
+         keywords={`${berita.judul}, berita desa baula, ${berita.kategori || 'informasi desa'}, desa baula`}
          image={berita.gambar || '/images/header.jpg'}
          url={`/berita/${berita.slug || berita.id}`}
          type="article"
@@ -257,32 +257,32 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
               "@type": "NewsArticle",
               "headline": berita.judul,
               "description": berita.isi.substring(0, 200) + "...",
-              "image": berita.gambar ? (berita.gambar.startsWith('http') ? berita.gambar : `https://kelurahan-balleangin.online${berita.gambar}`) : "https://kelurahan-balleangin.online/images/header.jpg",
+              "image": berita.gambar ? (berita.gambar.startsWith('http') ? berita.gambar : `https://desa-baula.id${berita.gambar}`) : "https://desa-baula.id/images/header.jpg",
               "image:width": 1200,
               "image:height": 630,
               "datePublished": dateToISOString(berita.tanggal),
               "dateModified": dateToISOString(berita.tanggal),
               "author": {
                 "@type": "Organization",
-                "name": "Kelurahan Balleangin",
-                "url": "https://kelurahan-balleangin.online"
+                "name": "Desa Baula",
+                "url": "https://desa-baula.id"
               },
               "publisher": {
                 "@type": "Organization",
-                "name": "Kelurahan Balleangin",
+                "name": "Desa Baula",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://kelurahan-balleangin.online/images/logo.png"
+                  "url": "https://desa-baula.id/images/logo.png"
                 }
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `https://kelurahan-balleangin.online/berita/${berita.slug || berita.id}`
+                "@id": `https://desa-baula.id/berita/${berita.slug || berita.id}`
               },
               "wordCount": wordCount,
               "timeRequired": `PT${readingTime}M`,
               "articleSection": berita.kategori || "Berita Umum",
-              "keywords": `${berita.judul}, berita kelurahan balleangin, ${berita.kategori || 'informasi kelurahan'}`
+              "keywords": `${berita.judul}, berita desa baula, ${berita.kategori || 'informasi desa'}`
             })
           }}
         />
@@ -494,7 +494,7 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
               
               <div className="text-sm text-gray-500 text-center order-1 sm:order-2">
                 <p>Terakhir diperbarui: {tanggalFormatted}</p>
-                <p className="mt-1">© 2025 Kelurahan Balleangin</p>
+                <p className="mt-1">© {new Date().getFullYear()} Desa Baula</p>
               </div>
             </div>
           </motion.div>

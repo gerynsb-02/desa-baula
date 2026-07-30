@@ -69,8 +69,8 @@ export default function Home() {
         } else {
           // Fallback to default images if no hero settings
           setHeroImages([
-            { url: '/images/header.jpg', title: 'Pemandangan Kelurahan Balleangin 1' },
-            { url: '/images/header2.jpg', title: 'Pemandangan Kelurahan Balleangin 2' }
+            { url: '/images/header.jpg', title: 'Pemandangan Desa Baula 1' },
+            { url: '/images/header2.jpg', title: 'Pemandangan Desa Baula 2' }
           ])
         }
 
@@ -110,8 +110,8 @@ export default function Home() {
         console.error('Error fetching data:', error)
         // Fallback to default images on error
         setHeroImages([
-          { url: '/images/header.jpg', title: 'Pemandangan Kelurahan Balleangin 1' },
-          { url: '/images/header2.jpg', title: 'Pemandangan Kelurahan Balleangin 2' }
+          { url: '/images/header.jpg', title: 'Pemandangan Desa Baula 1' },
+          { url: '/images/header2.jpg', title: 'Pemandangan Desa Baula 2' }
         ])
       } finally {
         setLoading({
@@ -135,10 +135,10 @@ export default function Home() {
   return (
     <Layout 
       title="Beranda"
-      description="Selamat datang di website resmi Kelurahan Balleangin. Informasi layanan publik, berita terbaru, dan profil kelurahan yang lengkap."
-      keywords="kelurahan balleangin, beranda, layanan publik, berita kelurahan, profil kelurahan, pemerintah desa, sulawesi selatan"
+      description="Selamat datang di website resmi Desa Baula. Informasi layanan publik, berita terbaru, dan profil kelurahan yang lengkap."
+      keywords="kelurahan baula, beranda, layanan publik, berita kelurahan, profil kelurahan, pemerintah desa, sulawesi selatan"
       image="/images/header.jpg"
-      url="https://kelurahan-balleangin.online"
+      url="https://desa-baula.online"
       type="website"
     >
       {/* Structured Data for Homepage */}
@@ -148,16 +148,16 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Beranda - Kelurahan Balleangin",
-            "description": "Selamat datang di website resmi Kelurahan Balleangin. Informasi layanan publik, berita terbaru, dan profil kelurahan yang lengkap.",
-            "url": "https://kelurahan-balleangin.online",
+            "name": "Beranda - Desa Baula",
+            "description": "Selamat datang di website resmi Desa Baula. Informasi layanan publik, berita terbaru, dan profil kelurahan yang lengkap.",
+            "url": "https://desa-baula.online",
             "mainEntity": {
               "@type": "WebSite",
-              "name": "Kelurahan Balleangin",
-              "url": "https://kelurahan-balleangin.online",
+              "name": "Desa Baula",
+              "url": "https://desa-baula.online",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://kelurahan-balleangin.online/berita?search={search_term_string}",
+                "target": "https://desa-baula.online/berita?search={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             }
@@ -227,8 +227,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/80" />
           {/* Light effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
-          {/* Subtle noise texture */}
-          <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-10 mix-blend-overlay" />
+          {/* Subtle grain texture via CSS */}
+          <div className="absolute inset-0 opacity-5 mix-blend-overlay" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E")'}} />
         </div>
 
         {/* Content */}
@@ -262,7 +262,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
                 >
-                  Kelurahan Balleangin
+                  Desa Baula
                 </motion.span>
               </motion.h1>
             </motion.div>
@@ -275,7 +275,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto mb-8 md:mb-12 text-white/90 font-medium leading-relaxed"
               >
-                Portal informasi, layanan publik, dan transparansi pemerintahan Kelurahan Balleangin. 
+                Portal informasi, layanan publik, dan transparansi pemerintahan Desa Baula. 
                 Kami berkomitmen memberikan pelayanan terbaik untuk masyarakat.
               </motion.p>
             </motion.div>
@@ -415,7 +415,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-lg text-gray-600 max-w-2xl mx-auto"
             >
-              Data terbaru kependudukan Kelurahan Balleangin
+              Data terbaru kependudukan Desa Baula
             </motion.p>
           </div>
 
@@ -529,7 +529,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
-                Pesan dan komitmen kami untuk melayani masyarakat Kelurahan Balleangin dengan sepenuh hati
+                Pesan dan komitmen kami untuk melayani masyarakat Desa Baula dengan sepenuh hati
               </motion.p>
             </div>
 
@@ -602,13 +602,13 @@ export default function Home() {
                           Assalamu&apos;alaikum Warrahmatullahi Wabarakatuh
                         </p>
                         <p className="mb-6">
-                          Selamat datang di website resmi Kelurahan Balleangin. Sebagai Kepala Kelurahan, saya mengucapkan terima kasih atas kepercayaan masyarakat yang telah diberikan kepada kami dalam mengelola pemerintahan di tingkat kelurahan.
+                          Selamat datang di website resmi Desa Baula. Sebagai Kepala Kelurahan, saya mengucapkan terima kasih atas kepercayaan masyarakat yang telah diberikan kepada kami dalam mengelola pemerintahan di tingkat kelurahan.
                         </p>
                         <p className="mb-6">
                           Kami berkomitmen untuk memberikan pelayanan terbaik bagi masyarakat melalui transparansi informasi, layanan publik yang mudah diakses, dan program-program yang berorientasi pada peningkatan kesejahteraan masyarakat.
                         </p>
                         <p className="mb-6">
-                          Mari bersama-sama membangun Balleangin yang lebih maju, sejahtera, dan berdaya saing melalui kolaborasi yang harmonis antara pemerintah dan masyarakat.
+                          Mari bersama-sama membangun Baula yang lebih maju, sejahtera, dan berdaya saing melalui kolaborasi yang harmonis antara pemerintah dan masyarakat.
                         </p>
                         <p>
                           Wassalamu&apos;alaikum Warrahmatullahi Wabarakatuh
@@ -658,7 +658,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
-                Tim pengelola Kelurahan Balleangin yang siap melayani masyarakat dengan profesional dan berdedikasi
+                Tim pengelola Desa Baula yang siap melayani masyarakat dengan profesional dan berdedikasi
               </motion.p>
             </div>
 
@@ -773,7 +773,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
-                Update informasi dan kegiatan terbaru dari Kelurahan Balleangin untuk masyarakat
+                Update informasi dan kegiatan terbaru dari Desa Baula untuk masyarakat
               </motion.p>
             </div>
 
@@ -893,7 +893,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
-                Dokumentasi kegiatan terbaru dan momen berharga dari Kelurahan Balleangin
+                Dokumentasi kegiatan terbaru dan momen berharga dari Desa Baula
               </motion.p>
             </div>
 
@@ -933,7 +933,7 @@ export default function Home() {
                         >
                           <NextImage
                             src={item.url}
-                            alt={item.judul || 'Kegiatan Kelurahan Balleangin'}
+                            alt={item.judul || 'Kegiatan Desa Baula'}
                             width={400}
                             height={400}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -1115,7 +1115,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
-                Temukan lokasi kantor Kelurahan Balleangin dan hubungi kami untuk informasi lebih lanjut
+                Temukan lokasi kantor Desa Baula dan hubungi kami untuk informasi lebih lanjut
               </motion.p>
             </div>
 
@@ -1131,8 +1131,8 @@ export default function Home() {
                 <div className="lg:w-1/2 h-80 lg:h-96 relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-blue-600/10 z-10 pointer-events-none"></div>
                   <iframe
-                    title="Peta Kantor Kelurahan Balleangin"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7950.236116795592!2d119.68907636365778!3d-4.9199086777263865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbe5950393ebf49%3A0x7c7b56e21c32b254!2sKantor%20Kelurahan%20Balleangin!5e0!3m2!1sen!2sid!4v1753090771628!5m2!1sen!2sid"
+                    title="Peta Kantor Desa Baula"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7950.236116795592!2d119.68907636365778!3d-4.9199086777263865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbe5950393ebf49%3A0x7c7b56e21c32b254!2sKantor%20Kelurahan%20Baula!5e0!3m2!1sen!2sid!4v1753090771628!5m2!1sen!2sid"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -1180,7 +1180,7 @@ export default function Home() {
                         <div className="flex-1">
                           <h4 className="font-semibold text-gray-800 mb-1">Alamat Kantor</h4>
                           <p className="text-gray-600 leading-relaxed">
-                            Jln. Pelita No.10, Balleanging, Balocci, Kab. Pangkep, Sulawesi Selatan 90661
+                            Jln. Pelita No.10, Baulag, Balocci, Kab. Pangkep, Sulawesi Selatan 90661
                           </p>
                         </div>
                       </motion.div>

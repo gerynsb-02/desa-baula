@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { signOut } from 'firebase/auth'
 import { auth } from '../lib/firebase'
@@ -111,7 +111,7 @@ export default function AdminSidebar() {
               {!isCollapsed && (
                 <div className="flex-1 min-w-0">
                   <h2 className="text-lg font-bold text-white">Admin Panel</h2>
-                  <p className="text-xs text-slate-400">Kelurahan Balleangin</p>
+                  <p className="text-xs text-slate-400">Desa Baula</p>
                 </div>
               )}
               <button
@@ -200,7 +200,7 @@ export default function AdminSidebar() {
                   <p className="text-sm font-medium text-white truncate">
                     {user?.email || 'Administrator'}
                   </p>
-                  <p className="text-xs text-slate-400">Kelurahan Balleangin</p>
+                  <p className="text-xs text-slate-400">Desa Baula</p>
                 </div>
               )}
             </div>

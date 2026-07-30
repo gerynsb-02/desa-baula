@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { collection, getDocs, doc, getDoc, query, orderBy, limit } from 'firebase/firestore'
 import { db } from '../../lib/firebase'
 import RequireAuth from '../../components/RequireAuth'
@@ -239,7 +239,7 @@ export default function AdminDashboard() {
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-slate-800 mb-2">Dashboard Admin</h1>
-            <p className="text-slate-600">Selamat datang di panel administrasi Kelurahan Balleangin</p>
+            <p className="text-slate-600">Selamat datang di panel administrasi Desa Baula</p>
           </div>
 
           {/* Stats Grid */}

@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://kelurahan-balleangin.online/sitemap.xml
+Sitemap: https://desa-baula.id/sitemap.xml
 
 # Disallow admin pages
 Disallow: /admin/
@@ -16,5 +16,4 @@ Allow: /berita/
 Allow: /profil/
 Allow: /galeri/
 Allow: /layanan/
-Allow: /potensi/
-Allow: /data/ 
+Allow: /data/

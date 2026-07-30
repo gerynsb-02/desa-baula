@@ -1,4 +1,4 @@
-import Image from 'next/image'
+﻿import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -22,7 +22,7 @@ export default function Footer() {
                 <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
                   <Image 
                     src="/images/logo.png" 
-                    alt="Logo Kelurahan Balleangin" 
+                    alt="Logo Desa Baula" 
                     width={60}
                     height={60}
                     className="w-15 h-15 object-contain"
@@ -31,9 +31,9 @@ export default function Footer() {
               </div>
               <div>
                 <h2 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">
-                  Kelurahan Balleangin
+                  Desa Baula
                 </h2>
-                <p className="text-emerald-200 text-sm font-medium">Kecamatan Balocci, Kabupaten Pangkep</p>
+                <p className="text-emerald-200 text-sm font-medium">Kecamatan Tellu Limpoe, Kabupaten Sidrap</p>
               </div>
             </div>
             
@@ -48,8 +48,8 @@ export default function Footer() {
                 <div>
                   <h3 className="text-white font-semibold mb-2">Alamat Kantor</h3>
                   <p className="text-white/80 text-sm leading-relaxed">
-                    Jln. Pelita No.10, Balleanging, Balocci<br />
-                    Kab. Pangkep, Sulawesi Selatan 90661
+                    Desa Baula, Kec. Tellu Limpoe<br />
+                    Kab. Sidrap, Sulawesi Selatan
                   </p>
                 </div>
               </div>
@@ -65,7 +65,7 @@ export default function Footer() {
             <nav className="space-y-3">
               {[
                 { href: '/berita', label: 'Berita', icon: '📰' },
-                { href: '/profil', label: 'Profil Kelurahan', icon: '🏢' },
+                { href: '/profil', label: 'Profil Desa', icon: '🏢' },
                 { href: '/layanan', label: 'Layanan Publik', icon: '🔧' },
                 { href: '/galeri', label: 'Galeri', icon: '📸' },
                 { href: '/data', label: 'Data & Statistik', icon: '📊' }
@@ -127,11 +127,11 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
             <div className="text-center lg:text-left">
               <p className="text-white/70 text-sm">
-                &copy; {new Date().getFullYear()} Kelurahan Balleangin. Semua hak cipta dilindungi.
+                &copy; {new Date().getFullYear()} Desa Baula. Semua hak cipta dilindungi.
               </p>
             </div>
             <div className="flex items-center space-x-2 text-xs text-white/60">
-              <span>Dikembangkan oleh Mahasiswa KKN 114 Universitas Hasanuddin </span>
+              <span>Dikembangkan untuk Desa Baula, Kec. Tellu Limpoe, Kab. Sidrap </span>
             </div>
           </div>
         </div>

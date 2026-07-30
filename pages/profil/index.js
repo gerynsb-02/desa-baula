@@ -1,4 +1,4 @@
-import Layout from '../../components/Layout'
+﻿import Layout from '../../components/Layout'
 import Head from 'next/head'
 import { db } from '../../lib/firebase'
 import { collection, getDocs } from 'firebase/firestore'
@@ -44,11 +44,11 @@ export default function Profil() {
   return (
     <div className='pt-15'>
     <Layout 
-      title="Profil Kelurahan"
-      description="Profil lengkap Kelurahan Balleangin - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah. Kenali lebih dekat kelurahan kami."
-      keywords="profil kelurahan balleangin, sejarah kelurahan, visi misi kelurahan, struktur pemerintahan, peta wilayah kelurahan, kelurahan sulawesi selatan"
+      title="Profil Desa"
+      description="Profil lengkap Desa Baula - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah. Kenali lebih dekat kelurahan kami."
+      keywords="profil kelurahan baula, sejarah kelurahan, visi misi kelurahan, struktur pemerintahan, peta wilayah kelurahan, kelurahan sulawesi selatan"
       image="/images/header.jpg"
-      url="https://kelurahan-balleangin.online/profil"
+      url="https://desa-baula.online/profil"
       type="website"
     >
       {/* Structured Data for Profile Page */}
@@ -58,16 +58,16 @@ export default function Profil() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Profil Kelurahan Balleangin",
-            "description": "Profil lengkap Kelurahan Balleangin - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah",
-            "url": "https://kelurahan-balleangin.online/profil",
+            "name": "Profil Desa Baula",
+            "description": "Profil lengkap Desa Baula - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah",
+            "url": "https://desa-baula.online/profil",
             "mainEntity": {
               "@type": "GovernmentOrganization",
-              "name": "Kelurahan Balleangin",
-              "description": "Kelurahan Balleangin adalah salah satu kelurahan di Sulawesi Selatan",
+              "name": "Desa Baula",
+              "description": "Desa Baula adalah salah satu kelurahan di Sulawesi Selatan",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Balleangin",
+                "addressLocality": "Baula",
                 "addressRegion": "Sulawesi Selatan",
                 "addressCountry": "ID"
               },
@@ -77,7 +77,7 @@ export default function Profil() {
                 "jobTitle": struktur.jabatan,
                 "worksFor": {
                   "@type": "Organization",
-                  "name": "Kelurahan Balleangin"
+                  "name": "Desa Baula"
                 }
               }))
             }
@@ -96,7 +96,7 @@ export default function Profil() {
             className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium mb-6"
           >
             <FaLandmark className="text-lg" />
-            Profil Kelurahan
+            Profil Desa
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -104,7 +104,7 @@ export default function Profil() {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
           >
-            Profil Kelurahan Balleangin
+            Profil Desa Baula
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ export default function Profil() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-green-100 max-w-3xl mx-auto"
           >
-            Mengenal lebih dekat sejarah, visi misi, dan struktur pemerintahan Kelurahan Balleangin
+            Mengenal lebih dekat sejarah, visi misi, dan struktur pemerintahan Desa Baula
           </motion.p>
         </div>
       </div>
@@ -159,7 +159,7 @@ export default function Profil() {
                 width={1200}
                 height={600}
                 src="/images/header.jpg"
-                alt="Foto sejarah Balleangin"
+                alt="Foto sejarah Baula"
                 className="object-cover w-full h-full"
                 priority
               />
@@ -167,7 +167,7 @@ export default function Profil() {
               <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 lg:bottom-6 lg:left-6">
                 <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg flex items-center gap-2 sm:gap-3">
                   <FaHistory className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
-                  <span className="hidden sm:inline">Sejarah Kelurahan Balleangin</span>
+                  <span className="hidden sm:inline">Sejarah Desa Baula</span>
                   <span className="sm:hidden">Sejarah</span>
                 </h2>
               </div>
@@ -188,7 +188,7 @@ export default function Profil() {
                       Asal Usul
                     </h3>
                     <p className="text-sm sm:text-base leading-relaxed text-gray-700">
-                      Balleangin adalah kelurahan di Kecamatan Balocci, Kabupaten Pangkajene dan Kepulauan, Sulawesi Selatan. Nama Balleangin berasal dari kata &ldquo;Balle&rdquo; dan &ldquo;angin&rdquo; yang berarti tempat berputarnya angin. Kelurahan ini berubah status dari desa menjadi kelurahan pada tahun 1980-an.
+                      Baula adalah desa di Kecamatan Tellu Limpoe, Kabupaten Sidenreng Rappang (Sidrap), Sulawesi Selatan. Desa Baula merupakan salah satu desa yang terus berkembang di wilayah Kabupaten Sidrap.
                     </p>
                   </motion.div>
                   <motion.div 
@@ -222,7 +222,7 @@ export default function Profil() {
                     Kehidupan Masyarakat
                   </h3>
                   <p className="text-sm sm:text-base leading-relaxed text-gray-700">
-                    Mayoritas penduduk bekerja sebagai petani, pedagang, dan peternak. Masyarakat Balleangin dikenal dengan semangat gotong royong yang tinggi dalam membangun daerahnya.
+                    Mayoritas penduduk bekerja sebagai petani, pedagang, dan peternak. Masyarakat Desa Baula dikenal dengan semangat gotong royong yang tinggi dalam membangun daerahnya.
                   </p>
                 </motion.div>
 
@@ -240,7 +240,7 @@ export default function Profil() {
                       Potensi Wisata
                     </h3>
                     <p className="text-sm sm:text-base leading-relaxed text-gray-700">
-                      Balleangin menawarkan berbagai objek wisata alam seperti sungai yang cocok untuk river tubing, gua-gua alam, dan trekking ke Kampung Prasejarah Biku. Pengunjung dapat menginap di homestay atau camping area yang tersedia.
+                      Desa Baula menawarkan potensi alam dan budaya yang beragam. Masyarakat desa terus berupaya mengembangkan potensi lokal untuk meningkatkan kesejahteraan warga.
                     </p>
                   </motion.div>
                   <motion.div 
@@ -282,7 +282,7 @@ export default function Profil() {
               <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white p-2 sm:p-3 rounded-xl">
                 <FaBullseye className="text-xl sm:text-2xl lg:text-3xl" />
               </div>
-              <span className="hidden sm:inline">Visi & Misi Kelurahan Balleangin</span>
+              <span className="hidden sm:inline">Visi & Misi Desa Baula</span>
               <span className="sm:hidden">Visi & Misi</span>
             </motion.h2>
             
@@ -368,7 +368,7 @@ export default function Profil() {
               <span className="sm:hidden">Struktur</span>
             </h2>
             <p className="text-gray-600 text-xs sm:text-sm lg:text-base max-w-2xl mx-auto">
-              Kenali para pemimpin dan struktur organisasi Kelurahan Balleangin
+              Kenali para pemimpin dan struktur organisasi Desa Baula
             </p>
           </motion.div>
           
@@ -513,7 +513,7 @@ export default function Profil() {
               <span className="sm:hidden">Peta Wilayah</span>
             </h2>
             <p className="text-gray-600 text-xs sm:text-sm lg:text-base max-w-2xl mx-auto">
-              Temukan lokasi dan batas wilayah Kelurahan Balleangin
+              Temukan lokasi dan batas wilayah Desa Baula
             </p>
           </motion.div>
           
@@ -538,7 +538,7 @@ export default function Profil() {
               </motion.h2>
               <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg mb-4 sm:mb-6">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15928.617294502882!2d119.599!3d-4.820!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbb0f53a648e08f%3A0x8c7f1e79abdf7253!2sKelurahan%20Balleangin!5e0!3m2!1sid!2sid!4v1721234567890" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15928.617294502882!2d119.599!3d-4.820!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbb0f53a648e08f%3A0x8c7f1e79abdf7253!2sKelurahan%20Baula!5e0!3m2!1sid!2sid!4v1721234567890" 
                   width="100%" 
                   height="300"
                   className="h-[250px] sm:h-[350px] lg:h-[400px]"
@@ -546,7 +546,7 @@ export default function Profil() {
                   allowFullScreen="" 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title='Peta Wilayah Kelurahan Balleangin'
+                  title='Peta Wilayah Desa Baula'
                 ></iframe>
               </div>
               <div className="max-w-2xl mx-auto">

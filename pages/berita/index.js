@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import CardBerita from '../../components/CardBerita'
 import { db } from '../../lib/firebase'
@@ -145,10 +145,10 @@ export default function Berita() {
    <div className='pt-15'>
     <Layout 
       title="Berita & Pengumuman"
-      description="Informasi terbaru seputar kegiatan, pengumuman, dan berita resmi dari Kelurahan Balleangin. Update terkini tentang layanan publik dan kegiatan kelurahan."
-      keywords="berita kelurahan balleangin, pengumuman kelurahan, berita terbaru, informasi kelurahan, kegiatan kelurahan, layanan publik"
+      description="Informasi terbaru seputar kegiatan, pengumuman, dan berita resmi dari Desa Baula. Update terkini tentang layanan publik dan kegiatan kelurahan."
+      keywords="berita kelurahan baula, pengumuman kelurahan, berita terbaru, informasi kelurahan, kegiatan kelurahan, layanan publik"
       image="/images/header.jpg"
-      url="https://kelurahan-balleangin.online/berita"
+      url="https://desa-baula.online/berita"
       type="website"
     >
       {/* Structured Data for News Page */}
@@ -158,9 +158,9 @@ export default function Berita() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Berita & Pengumuman - Kelurahan Balleangin",
-            "description": "Informasi terbaru seputar kegiatan, pengumuman, dan berita resmi dari Kelurahan Balleangin",
-            "url": "https://kelurahan-balleangin.online/berita",
+            "name": "Berita & Pengumuman - Desa Baula",
+            "description": "Informasi terbaru seputar kegiatan, pengumuman, dan berita resmi dari Desa Baula",
+            "url": "https://desa-baula.online/berita",
             "mainEntity": {
               "@type": "ItemList",
               "itemListElement": beritaList.slice(0, 10).map((berita, index) => ({
@@ -173,14 +173,14 @@ export default function Berita() {
                                      "datePublished": dateToISOString(berita.tanggal),
                   "author": {
                     "@type": "Organization",
-                    "name": "Kelurahan Balleangin"
+                    "name": "Desa Baula"
                   },
                   "publisher": {
                     "@type": "Organization",
-                    "name": "Kelurahan Balleangin",
+                    "name": "Desa Baula",
                     "logo": {
                       "@type": "ImageObject",
-                      "url": "https://kelurahan-balleangin.online/images/logo.png"
+                      "url": "https://desa-baula.online/images/logo.png"
                     }
                   }
                 }
@@ -217,7 +217,7 @@ export default function Berita() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-green-100 max-w-3xl mx-auto"
           >
-            Informasi terbaru seputar kegiatan dan pengumuman resmi Kelurahan Balleangin
+            Informasi terbaru seputar kegiatan dan pengumuman resmi Desa Baula
           </motion.p>
         </div>
       </div>

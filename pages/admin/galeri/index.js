@@ -1,8 +1,8 @@
 // pages/admin/galeri/index.js
 import { useEffect, useState } from 'react'
 import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore'
-import { ref, deleteObject } from 'firebase/storage'
-import { db, storage } from '../../../lib/firebase'
+import { db } from '../../../lib/firebase'
+import { deleteImage } from '../../../lib/uploadCloudinary'
 import AdminLayout from '../../../components/AdminLayout'
 import RequireAuth from '../../../components/RequireAuth'
 import Link from 'next/link'
@@ -31,8 +31,7 @@ export default function GaleriIndex() {
     if (confirm('Yakin ingin menghapus gambar ini?')) {
       try {
         if (path) {
-          const imageRef = ref(storage, path)
-          await deleteObject(imageRef)
+          await deleteImage(path)
         }
         await deleteDoc(doc(db, 'galeri', id))
         setGaleriList(galeriList.filter(item => item.id !== id))

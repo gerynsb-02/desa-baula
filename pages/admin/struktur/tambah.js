@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import RequireAuth from '../../../components/RequireAuth'
 import AdminLayout from '../../../components/AdminLayout'
 import { db } from '../../../lib/firebase'
-import { uploadImage } from '../../../lib/uploadImage'
+import { uploadImage } from '../../../lib/uploadCloudinary'
 import Link from 'next/link'
 import Image from 'next/image'
 

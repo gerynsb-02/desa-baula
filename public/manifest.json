@@ -1,7 +1,7 @@
 {
-  "name": "Kelurahan Balleangin",
-  "short_name": "Balleangin",
-  "description": "Website resmi Kelurahan Balleangin - Informasi layanan, berita, dan profil kelurahan",
+  "name": "Desa Baula",
+  "short_name": "Baula",
+  "description": "Website resmi Desa Baula - Informasi layanan, berita, dan profil desa",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#16a34a",
@@ -49,7 +49,7 @@
     {
       "name": "Profil",
       "short_name": "Profil",
-      "description": "Profil kelurahan",
+      "description": "Profil desa",
       "url": "/profil",
       "icons": [
         {
@@ -59,4 +59,4 @@
       ]
     }
   ]
-} 
+}

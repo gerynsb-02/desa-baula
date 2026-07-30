@@ -1,8 +1,8 @@
 // pages/admin/berita/index.js
 import { useEffect, useState } from 'react'
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore'
-import { ref, deleteObject } from 'firebase/storage'
-import { db, storage } from '../../../lib/firebase'
+import { db } from '../../../lib/firebase'
+import { deleteImage } from '../../../lib/uploadCloudinary'
 import RequireAuth from '../../../components/RequireAuth'
 import AdminLayout from '../../../components/AdminLayout'
 import Link from 'next/link'
@@ -40,8 +40,7 @@ export default function ListBerita() {
     if (confirm('Yakin ingin menghapus berita ini?')) {
       try {
         if (path) {
-          const imageRef = ref(storage, path)
-          await deleteObject(imageRef)
+          await deleteImage(path)
         }
         await deleteDoc(doc(db, 'berita', id))
         fetchBerita()

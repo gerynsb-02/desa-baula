@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { db } from '../../../lib/firebase'
 import { collection, addDoc, updateDoc, doc } from 'firebase/firestore'
@@ -51,7 +51,7 @@ export default function TambahRW() {
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h1 className="text-2xl font-bold text-green-700">Tambah Data RW Baru</h1>
-                <p className="text-gray-600 mt-1">Buat data RW baru untuk Kelurahan Balleangin</p>
+                <p className="text-gray-600 mt-1">Buat data RW baru untuk Desa Baula</p>
               </div>
               <Link 
                 href="/admin/data" 

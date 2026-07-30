@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { doc, getDoc, updateDoc } from 'firebase/firestore'
 import { db, generateUniqueSlug } from '../../../lib/firebase'
-import { uploadImage } from '../../../lib/uploadImage'
+import { uploadImage } from '../../../lib/uploadCloudinary'
 import AdminLayout from '../../../components/AdminLayout'
 import RequireAuth from '../../../components/RequireAuth'
 import Link from 'next/link'
@@ -67,7 +67,7 @@ export default function EditBerita() {
     try {
       let imageUrl = gambarLama
       if (gambarBaru) {
-        const imageData = await uploadImage(gambarBaru)
+        const imageData = await uploadImage(gambarBaru, 'berita')
         imageUrl = imageData.url
       }
 
@@ -168,7 +168,7 @@ export default function EditBerita() {
                   </label>
                   <input
                     type="text"
-                    placeholder="Contoh: Humas Kelurahan Balleangin"
+                    placeholder="Contoh: Humas Desa Baula"
                     value={sumber}
                     onChange={(e) => setSumber(e.target.value)}
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900"

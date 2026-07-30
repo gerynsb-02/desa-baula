@@ -26,12 +26,12 @@ export default function Document() {
         
         {/* Open Graph Default */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Kelurahan Balleangin" />
+        <meta property="og:site_name" content="Desa Baula" />
         <meta property="og:locale" content="id_ID" />
         
         {/* Twitter Card Default */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@kelurahan_balleangin" />
+        <meta name="twitter:site" content="@desa_baula" />
         
         {/* Structured Data - Organization */}
         <script
@@ -40,14 +40,14 @@ export default function Document() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "GovernmentOrganization",
-              "name": "Kelurahan Balleangin",
-              "description": "Website resmi Kelurahan Balleangin - Informasi layanan, berita, dan profil kelurahan",
-              "url": "https://kelurahan-balleangin.online",
-              "logo": "https://kelurahan-balleangin.online/images/logo.png",
-              "image": "https://kelurahan-balleangin.online/images/header.jpg",
+              "name": "Desa Baula",
+              "description": "Website resmi Desa Baula - Informasi layanan, berita, dan profil desa",
+              "url": "https://desa-baula.id",
+              "logo": "https://desa-baula.id/images/logo.png",
+              "image": "https://desa-baula.id/images/header.jpg",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Balleangin",
+                "addressLocality": "Baula",
                 "addressRegion": "Sulawesi Selatan",
                 "addressCountry": "ID"
               },
@@ -56,10 +56,7 @@ export default function Document() {
                 "contactType": "customer service",
                 "availableLanguage": "Indonesian"
               },
-              "sameAs": [
-                "https://facebook.com/balleangin",
-                "https://instagram.com/balleangin"
-              ]
+              "sameAs": []
             })
           }}
         />

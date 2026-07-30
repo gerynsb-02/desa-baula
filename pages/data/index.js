@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import Head from 'next/head'
 import { Bar, Pie, Doughnut } from 'react-chartjs-2'
@@ -125,7 +125,7 @@ export default function Data() {
     <div className='pt-15'>
     <Layout title="Data & Statistik">
       <Head>
-        <meta name="description" content="Data dan statistik terbaru Kelurahan Balleangin" />
+        <meta name="description" content="Data dan statistik terbaru Desa Baula" />
       </Head>
 
       {/* Hero Section */}
@@ -147,7 +147,7 @@ export default function Data() {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
           >
-            Data & Statistik Kelurahan Balleangin
+            Data & Statistik Desa Baula
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -192,7 +192,7 @@ export default function Data() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto"
           >
-            Data terbaru kependudukan Kelurahan Balleangin
+            Data terbaru kependudukan Desa Baula
           </motion.p>
         </motion.div>
 
@@ -525,7 +525,7 @@ export default function Data() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto"
             >
-              Data yang ditampilkan bersumber dari catatan resmi Kelurahan Balleangin
+              Data yang ditampilkan bersumber dari catatan resmi Desa Baula
             </motion.p>
           </div>
           

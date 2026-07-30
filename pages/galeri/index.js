@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { collection, getDocs, orderBy, query } from 'firebase/firestore'
 import { db } from '../../lib/firebase'
 import Layout from '../../components/Layout'
@@ -77,9 +77,9 @@ export default function GaleriPage() {
       const urlObj = new URL(url)
       const pathname = urlObj.pathname
       const filename = pathname.split('/').pop().split('?')[0]
-      return filename || 'Galeri Kelurahan Balleangin'
+      return filename || 'Galeri Desa Baula'
     } catch {
-      return 'Galeri Kelurahan Balleangin'
+      return 'Galeri Desa Baula'
     }
   }
 
@@ -87,8 +87,8 @@ export default function GaleriPage() {
     <div className='pt-15'>
     <Layout>
       <Head>
-        <title>Galeri - Kelurahan Balleangin</title>
-        <meta name="description" content="Galeri foto kegiatan Kelurahan Balleangin" />
+        <title>Galeri - Desa Baula</title>
+        <meta name="description" content="Galeri foto kegiatan Desa Baula" />
       </Head>
       
       {/* Hero Section */}
@@ -118,7 +118,7 @@ export default function GaleriPage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-green-100 max-w-3xl mx-auto"
           >
-            Dokumentasi kegiatan dan momen penting Kelurahan Balleangin
+            Dokumentasi kegiatan dan momen penting Desa Baula
           </motion.p>
         </div>
       </div>

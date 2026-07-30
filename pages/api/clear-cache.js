@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+﻿export default function handler(req, res) {
   res.setHeader('Content-Type', 'text/html')
   res.status(200).send(`
     <!DOCTYPE html>
@@ -6,7 +6,7 @@ export default function handler(req, res) {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Clear Cache - Kelurahan Balleangin</title>
+      <title>Clear Cache - Desa Baula</title>
       <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
         .button { display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin: 10px 5px; }
@@ -21,7 +21,7 @@ export default function handler(req, res) {
         <h2>1. Facebook Debugger</h2>
         <p>Gunakan Facebook Debugger untuk clear cache dan test preview:</p>
         <a href="https://developers.facebook.com/tools/debug/" target="_blank" class="button">Facebook Debugger</a>
-        <p>Masukkan URL: <strong>https://kelurahan-balleangin.online/berita/mahasiswa-kkn-unhas-serahkan-website-resmi-dan-latih-perangkat-kelurahan-balleangin</strong></p>
+        <p>Masukkan URL: <strong>https://desa-baula.online/berita/mahasiswa-kkn-unhas-serahkan-website-resmi-dan-latih-perangkat-desa-baula</strong></p>
       </div>
 
       <div class="section">
@@ -39,7 +39,7 @@ export default function handler(req, res) {
       <div class="section">
         <h2>4. WhatsApp Test</h2>
         <p>Copy URL ini dan paste di WhatsApp:</p>
-        <p><strong>https://kelurahan-balleangin.online/berita/mahasiswa-kkn-unhas-serahkan-website-resmi-dan-latih-perangkat-kelurahan-balleangin</strong></p>
+        <p><strong>https://desa-baula.online/berita/mahasiswa-kkn-unhas-serahkan-website-resmi-dan-latih-perangkat-desa-baula</strong></p>
         <p>Jika masih menampilkan preview lama, coba:</p>
         <ul>
           <li>Restart WhatsApp</li>
@@ -51,7 +51,7 @@ export default function handler(req, res) {
       <div class="section">
         <h2>5. Test URL</h2>
         <p>Test dengan URL ini untuk memastikan meta tags bekerja:</p>
-        <a href="https://kelurahan-balleangin.online/api/test-whatsapp" target="_blank" class="button">Test WhatsApp Preview</a>
+        <a href="https://desa-baula.online/api/test-whatsapp" target="_blank" class="button">Test WhatsApp Preview</a>
       </div>
     </body>
     </html>

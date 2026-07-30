@@ -1,13 +1,13 @@
-import Navbar from './Navbar'
+﻿import Navbar from './Navbar'
 import Footer from './Footer'
 import Head from 'next/head'
 
 export default function Layout({ children, title, description, keywords, image, url, type = 'website' }) {
-  const siteName = 'Kelurahan Balleangin'
+  const siteName = 'Desa Baula'
   const fullTitle = title ? `${title} - ${siteName}` : siteName
-  const defaultDescription = 'Website resmi Kelurahan Balleangin - Informasi layanan, berita, dan profil kelurahan terbaru'
+  const defaultDescription = 'Website resmi Desa Baula - Informasi layanan, berita, dan profil kelurahan terbaru'
   const defaultImage = '/images/header.jpg'
-  const defaultUrl = 'https://kelurahan-balleangin.online'
+  const defaultUrl = 'https://desa-baula.online'
   
   // Ensure image URL is absolute
   const getAbsoluteImageUrl = (imageUrl) => {
@@ -26,8 +26,8 @@ export default function Layout({ children, title, description, keywords, image, 
         {/* Basic Meta Tags */}
         <title>{fullTitle}</title>
         <meta name="description" content={description || defaultDescription} />
-        <meta name="keywords" content={keywords || 'kelurahan balleangin, balleangin, pangkep, pemerintah desa, layanan publik, berita kelurahan, profil kelurahan, sulawesi selatan'} />
-        <meta name="author" content="Kelurahan Balleangin" />
+        <meta name="keywords" content={keywords || 'kelurahan baula, baula, pangkep, pemerintah desa, layanan publik, berita kelurahan, profil kelurahan, sulawesi selatan'} />
+        <meta name="author" content="Desa Baula" />
         <meta name="robots" content="index, follow" />
         
         {/* Canonical URL */}
@@ -59,7 +59,7 @@ export default function Layout({ children, title, description, keywords, image, 
         <meta name="twitter:description" content={description || defaultDescription} />
         <meta name="twitter:image" content={ogImage} />
         <meta name="twitter:image:alt" content={title || siteName} />
-        <meta name="twitter:site" content="@kelurahan_balleangin" />
+        <meta name="twitter:site" content="@desa_baula" />
         
         {/* Additional Meta Tags */}
         <meta name="application-name" content={siteName} />

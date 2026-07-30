@@ -31,7 +31,7 @@ export default function Navbar() {
 
     const navItems = [
         { href: '/', label: 'Beranda', icon: FaHome },
-        { href: '/profil', label: 'Profil Kelurahan', icon: FaUser },
+        { href: '/profil', label: 'Profil Desa', icon: FaUser },
         { href: '/layanan', label: 'Layanan', icon: FaCogs },
         { href: '/data', label: 'Demografi', icon: FaDatabase },
         { href: '/berita', label: 'Berita', icon: FaNewspaper },
@@ -78,7 +78,7 @@ export default function Navbar() {
                         >
                             <Image 
                                 src="/images/logo.png" 
-                                alt="Logo Kelurahan Balleangin" 
+                                alt="Logo Desa Baula" 
                                 width={48}
                                 height={48}
                                 className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 object-contain"
@@ -86,10 +86,10 @@ export default function Navbar() {
                         </motion.div>
                         <div className="block">
                             <h1 className={`font-bold text-xs sm:text-sm lg:text-lg transition-colors duration-300 ${getTextColor()}`}>
-                                Kelurahan Balleangin
+                                Desa Baula
                             </h1>
                             <p className={`text-xs transition-colors duration-300 ${getSubtitleColor()}`}>
-                                Kabupaten Pangkep
+                                Kec. Tellu Limpoe, Kab. Sidrap
                             </p>
                         </div>
                     </Link>
