@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kelurahan-balleangin.online/sitemap.xml
+
+# Disallow admin pages
+Disallow: /admin/
+Disallow: /api/
+
+# Crawl delay
+Crawl-delay: 1
+
+# Allow important pages
+Allow: /berita/
+Allow: /profil/
+Allow: /galeri/
+Allow: /layanan/
+Allow: /potensi/
+Allow: /data/ 

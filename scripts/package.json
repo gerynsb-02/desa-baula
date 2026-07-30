@@ -1,0 +1,14 @@
+{
+  "name": "berita-slug-migration",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Script untuk migrasi URL berita ke slug",
+  "main": "updateBeritaSlugs.js",
+  "scripts": {
+    "setup": "node auto-setup.js",
+    "migrate": "node updateBeritaSlugs.js"
+  },
+  "dependencies": {
+    "firebase": "^10.0.0"
+  }
+} 
