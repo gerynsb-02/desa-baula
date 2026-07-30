@@ -1,4 +1,4 @@
-﻿import Layout from '../../components/Layout'
+import Layout from '../../components/Layout'
 import Head from 'next/head'
 import { db } from '../../lib/firebase'
 import { collection, getDocs } from 'firebase/firestore'
@@ -538,7 +538,7 @@ export default function Profil() {
               </motion.h2>
               <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg mb-4 sm:mb-6">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15928.617294502882!2d119.599!3d-4.820!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbb0f53a648e08f%3A0x8c7f1e79abdf7253!2sKelurahan%20Baula!5e0!3m2!1sid!2sid!4v1721234567890" 
+                  src="https://maps.google.com/maps?q=Kantor%20Desa%20Baula,%20Tellu%20Limpoe,%20Sidrap&t=&z=14&ie=UTF8&iwloc=&output=embed" 
                   width="100%" 
                   height="300"
                   className="h-[250px] sm:h-[350px] lg:h-[400px]"

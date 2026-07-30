@@ -1132,7 +1132,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-blue-600/10 z-10 pointer-events-none"></div>
                   <iframe
                     title="Peta Kantor Desa Baula"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7950.236116795592!2d119.68907636365778!3d-4.9199086777263865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbe5950393ebf49%3A0x7c7b56e21c32b254!2sKantor%20Kelurahan%20Baula!5e0!3m2!1sen!2sid!4v1753090771628!5m2!1sen!2sid"
+                    src="https://maps.google.com/maps?q=Kantor%20Desa%20Baula,%20Tellu%20Limpoe,%20Sidrap&t=&z=14&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -1180,7 +1180,7 @@ export default function Home() {
                         <div className="flex-1">
                           <h4 className="font-semibold text-gray-800 mb-1">Alamat Kantor</h4>
                           <p className="text-gray-600 leading-relaxed">
-                            Jln. Pelita No.10, Baulag, Balocci, Kab. Pangkep, Sulawesi Selatan 90661
+                            Desa Baula, Kec. Tellu Limpoe, Kab. Sidenreng Rappang (Sidrap), Sulawesi Selatan 91661
                           </p>
                         </div>
                       </motion.div>
@@ -1194,7 +1194,7 @@ export default function Home() {
                       className="mt-8 flex justify-center"
                     >
                       <a 
-                        href="https://maps.google.com" 
+                        href="https://maps.app.goo.gl/hAsbEuUTYGrTfEW37" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
