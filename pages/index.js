@@ -8,7 +8,7 @@ import Head from 'next/head'
 import ScrollNavigator from '../components/ScrollNavigator'
 import NextImage from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
+import {
   FaUsers, FaMale, FaFemale, FaHome, FaInfoCircle, FaDatabase, FaUserTie, FaMapMarkerAlt, FaPhone, FaQuoteLeft, FaEnvelope, FaNewspaper, FaArrowRight, FaImage, FaExpand, FaChevronLeft, FaChevronRight, FaTimes, FaUser
 } from 'react-icons/fa'
 import Link from 'next/link'
@@ -78,24 +78,24 @@ export default function Home() {
         const beritaQuery = query(collection(db, 'berita'), orderBy('tanggal', 'desc'), limit(4))
         const beritaSnapshot = await getDocs(beritaQuery)
         setBeritaList(beritaSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })))
-        
+
         // Fetch Struktur
         const strukturSnapshot = await getDocs(collection(db, 'struktur'))
         const strukturData = strukturSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-        
+
         // Sort struktur data - Lurah first, then others
         const sortedStrukturData = strukturData.sort((a, b) => {
           const aIsLurah = a.jabatan.toLowerCase().includes('lurah')
           const bIsLurah = b.jabatan.toLowerCase().includes('lurah')
-          
+
           if (aIsLurah && !bIsLurah) return -1
           if (!aIsLurah && bIsLurah) return 1
           return 0
         })
-        
+
         setStrukturList(sortedStrukturData)
         setLurah(sortedStrukturData.find(item => item.jabatan.toLowerCase().includes('lurah')))
-        
+
         // Fetch Galeri
         const galeriQuery = query(collection(db, 'galeri'), orderBy('createdAt', 'desc'), limit(8))
         const galeriSnapshot = await getDocs(galeriQuery)
@@ -133,7 +133,7 @@ export default function Home() {
   const totalKK = penduduk ? penduduk.jumlah_kk : 0
 
   return (
-    <Layout 
+    <Layout
       title="Beranda"
       description="Selamat datang di website resmi Desa Baula. Informasi layanan publik, berita terbaru, dan profil kelurahan yang lengkap."
       keywords="kelurahan baula, beranda, layanan publik, berita kelurahan, profil kelurahan, pemerintah desa, sulawesi selatan"
@@ -164,12 +164,12 @@ export default function Home() {
           })
         }}
       />
-      
+
       {/* Preload hero images */}
       {heroImages.map((image, index) => (
         <link key={index} rel="preload" as="image" href={image.url} />
       ))}
-      
+
       {/* Custom CSS for smooth animations */}
       <style jsx global>{`
         @keyframes zoomInOut {
@@ -196,9 +196,8 @@ export default function Home() {
           {heroImages.map((image, index) => (
             <div
               key={index}
-              className={`absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${
-                index === heroIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-              }`}
+              className={`absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${index === heroIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                }`}
               style={{
                 backgroundImage: `url(${image.url})`,
                 backgroundSize: 'cover',
@@ -207,7 +206,7 @@ export default function Home() {
             >
               {/* Subtle zoom animation for active image */}
               {index === heroIndex && (
-                <div 
+                <div
                   className="absolute inset-0 w-full h-full animate-pulse-slow"
                   style={{
                     backgroundImage: `url(${image.url})`,
@@ -228,7 +227,7 @@ export default function Home() {
           {/* Light effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
           {/* Subtle grain texture via CSS */}
-          <div className="absolute inset-0 opacity-5 mix-blend-overlay" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E")'}} />
+          <div className="absolute inset-0 opacity-5 mix-blend-overlay" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E")' }} />
         </div>
 
         {/* Content */}
@@ -242,13 +241,13 @@ export default function Home() {
 
             {/* Main Title with Staggered Animation */}
             <motion.div className="overflow-hidden">
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight tracking-tight"
               >
-                <motion.span 
+                <motion.span
                   className="block text-white/90 font-normal mb-2 text-lg sm:text-xl md:text-2xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -256,7 +255,7 @@ export default function Home() {
                 >
                   Selamat Datang di
                 </motion.span>
-                <motion.span 
+                <motion.span
                   className="block bg-gradient-to-r from-green-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -269,26 +268,26 @@ export default function Home() {
 
             {/* Subtitle */}
             <motion.div className="overflow-hidden">
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto mb-8 md:mb-12 text-white/90 font-medium leading-relaxed"
               >
-                Portal informasi, layanan publik, dan transparansi pemerintahan Desa Baula. 
+                Portal informasi, layanan publik, dan transparansi pemerintahan Desa Baula.
                 Kami berkomitmen memberikan pelayanan terbaik untuk masyarakat.
               </motion.p>
             </motion.div>
 
             {/* Action Buttons with Stagger */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ staggerChildren: 0.1, delayChildren: 1 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <motion.a 
-                href="#berita" 
+              <motion.a
+                href="#berita"
                 className="group relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
@@ -301,8 +300,8 @@ export default function Home() {
                 <span className="relative z-10">Lihat Berita Terkini</span>
               </motion.a>
 
-              <motion.a 
-                href="#lokasi" 
+              <motion.a
+                href="#lokasi"
                 className="group relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 shadow-xl hover:shadow-2xl backdrop-blur-sm transition-all duration-300 text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2"
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.95 }}
@@ -332,11 +331,10 @@ export default function Home() {
                       }
                       setHeroIndex(index);
                     }}
-                    className={`w-3 h-3 rounded-full transition-all duration-500 ease-in-out hover:scale-125 focus:outline-none ${
-                      index === heroIndex 
-                        ? 'bg-white scale-125 shadow-[0_0_15px_3px_rgba(255,255,255,0.8)] animate-pulse' 
+                    className={`w-3 h-3 rounded-full transition-all duration-500 ease-in-out hover:scale-125 focus:outline-none ${index === heroIndex
+                        ? 'bg-white scale-125 shadow-[0_0_15px_3px_rgba(255,255,255,0.8)] animate-pulse'
                         : 'bg-white/50 hover:bg-white/70 hover:scale-110'
-                    }`}
+                      }`}
                     aria-label={`Gambar ${index + 1}`}
                   />
                 ))}
@@ -395,7 +393,7 @@ export default function Home() {
               <FaDatabase className="text-lg" />
               Data Kependudukan
             </motion.div>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -409,7 +407,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6 rounded-full"
             ></motion.div>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -420,40 +418,40 @@ export default function Home() {
           </div>
 
           {/* Main Stats Grid */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto"
           >
             {[
-              { 
-                icon: FaUsers, 
-                label: 'Total Penduduk', 
+              {
+                icon: FaUsers,
+                label: 'Total Penduduk',
                 value: loading.penduduk ? '...' : totalPenduduk.toLocaleString('id-ID'),
                 bgColor: 'bg-green-100',
                 textColor: 'text-green-600',
                 borderColor: 'border-green-200'
               },
-              { 
-                icon: FaMale, 
-                label: 'Laki-laki', 
+              {
+                icon: FaMale,
+                label: 'Laki-laki',
                 value: loading.penduduk ? '...' : (penduduk?.laki_laki || 0).toLocaleString('id-ID'),
                 bgColor: 'bg-blue-100',
                 textColor: 'text-blue-600',
                 borderColor: 'border-blue-200'
               },
-              { 
-                icon: FaFemale, 
-                label: 'Perempuan', 
+              {
+                icon: FaFemale,
+                label: 'Perempuan',
                 value: loading.penduduk ? '...' : (penduduk?.perempuan || 0).toLocaleString('id-ID'),
                 bgColor: 'bg-pink-100',
                 textColor: 'text-pink-600',
                 borderColor: 'border-pink-200'
               },
-              { 
-                icon: FaHome, 
-                label: 'Jumlah KK', 
+              {
+                icon: FaHome,
+                label: 'Jumlah KK',
                 value: loading.penduduk ? '...' : totalKK.toLocaleString('id-ID'),
                 bgColor: 'bg-orange-100',
                 textColor: 'text-orange-600',
@@ -477,13 +475,13 @@ export default function Home() {
           </motion.div>
 
           {/* Action Button */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-center mt-12"
           >
-            <Link 
+            <Link
               href="/data"
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
@@ -509,7 +507,7 @@ export default function Home() {
                 <FaUserTie className="text-lg" />
                 Sambutan Kepala Kelurahan
               </motion.div>
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -523,7 +521,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6 rounded-full"
               ></motion.div>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -538,7 +536,7 @@ export default function Home() {
               <div className="grid lg:grid-cols-3 gap-0">
                 {/* Photo Section */}
                 {lurah && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -549,7 +547,7 @@ export default function Home() {
                       <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16"></div>
                       <div className="absolute bottom-0 right-0 w-24 h-24 bg-white rounded-full translate-x-12 translate-y-12"></div>
                     </div>
-                    
+
                     {/* Profile Photo */}
                     <div className="relative z-10">
                       <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl mx-auto bg-white/20 backdrop-blur-sm">
@@ -570,18 +568,18 @@ export default function Home() {
                           <FaUser className="text-6xl text-gray-400" />
                         </div>
                       </div>
-                      
+
                       {/* Profile Info */}
                       <div className="mt-8">
                         <h3 className="text-2xl font-bold mb-2 tracking-wide">{lurah.nama}</h3>
-                        <p className="text-green-100 text-lg font-medium mb-4">{lurah.jabatan}</p>                    
+                        <p className="text-green-100 text-lg font-medium mb-4">{lurah.jabatan}</p>
                       </div>
                     </div>
                   </motion.div>
                 )}
 
                 {/* Message Section */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -638,7 +636,7 @@ export default function Home() {
                 <FaUsers className="text-lg" />
                 Tim Pengelola
               </motion.div>
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -652,7 +650,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6 rounded-full"
               ></motion.div>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -664,7 +662,7 @@ export default function Home() {
 
             {/* Loading State */}
             {loading.struktur ? (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="flex justify-center py-12"
@@ -677,7 +675,7 @@ export default function Home() {
             ) : (
               <>
                 {/* Main Content with ScrollNavigator */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -702,7 +700,7 @@ export default function Home() {
 
                   {/* Empty State */}
                   {strukturList.length === 0 && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6 }}
@@ -718,13 +716,13 @@ export default function Home() {
                 </motion.div>
 
                 {/* Action Button */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="text-center mt-12"
                 >
-                  <Link 
+                  <Link
                     href="/profil"
                     className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                   >
@@ -753,7 +751,7 @@ export default function Home() {
                 <FaNewspaper className="text-lg" />
                 Informasi Terkini
               </motion.div>
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -767,7 +765,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6 rounded-full"
               ></motion.div>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -779,7 +777,7 @@ export default function Home() {
 
             {/* Loading State */}
             {loading.berita ? (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="flex justify-center py-12"
@@ -793,7 +791,7 @@ export default function Home() {
               <>
 
                 {/* Main Content with ScrollNavigator */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
@@ -822,7 +820,7 @@ export default function Home() {
 
                   {/* Empty State */}
                   {beritaList.length === 0 && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6 }}
@@ -838,13 +836,13 @@ export default function Home() {
                 </motion.div>
 
                 {/* Action Button */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="text-center mt-12"
                 >
-                  <Link 
+                  <Link
                     href="/berita"
                     className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                   >
@@ -873,7 +871,7 @@ export default function Home() {
                 <FaImage className="text-lg" />
                 Dokumentasi Kegiatan
               </motion.div>
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -887,7 +885,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="w-24 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto mb-6 rounded-full"
               ></motion.div>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -899,7 +897,7 @@ export default function Home() {
 
             {/* Loading State */}
             {loading.galeri ? (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="flex justify-center py-12"
@@ -913,7 +911,7 @@ export default function Home() {
               <>
 
                 {/* Main Content with ScrollNavigator */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
@@ -927,7 +925,7 @@ export default function Home() {
                         transition={{ duration: 0.5, delay: 0.1 * index }}
                         className="flex-shrink-0 w-64 lg:w-72 snap-start"
                       >
-                        <div 
+                        <div
                           className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-square cursor-pointer group"
                           onClick={() => setSelectedImage({ index, url: item.url, title: item.judul })}
                         >
@@ -939,7 +937,7 @@ export default function Home() {
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                          
+
                           {/* Image Info Overlay */}
                           {item.judul && (
                             <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -948,7 +946,7 @@ export default function Home() {
                               </div>
                             </div>
                           )}
-                          
+
                           {/* Click Indicator */}
                           <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <FaExpand className="text-gray-600 text-sm" />
@@ -960,7 +958,7 @@ export default function Home() {
 
                   {/* Empty State */}
                   {galeriList.length === 0 && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6 }}
@@ -976,13 +974,13 @@ export default function Home() {
                 </motion.div>
 
                 {/* Action Button */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="text-center mt-12"
                 >
-                  <Link 
+                  <Link
                     href="/galeri"
                     className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                   >
@@ -997,7 +995,7 @@ export default function Home() {
 
         {/* Enhanced Image Preview Modal */}
         {selectedImage && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -1009,7 +1007,7 @@ export default function Home() {
             }}
           >
             {/* Close Button */}
-            <button 
+            <button
               onClick={() => setSelectedImage(null)}
               className="absolute top-6 right-6 text-white hover:text-blue-400 transition-colors z-10 bg-black/50 rounded-full p-3 backdrop-blur-sm"
               aria-label="Tutup preview"
@@ -1018,7 +1016,7 @@ export default function Home() {
             </button>
 
             {/* Navigation Buttons */}
-            <button 
+            <button
               onClick={() => {
                 const newIndex = selectedImage.index > 0 ? selectedImage.index - 1 : galeriList.length - 1;
                 setSelectedImage({
@@ -1033,7 +1031,7 @@ export default function Home() {
               <FaChevronLeft className="w-6 h-6" />
             </button>
 
-            <button 
+            <button
               onClick={() => {
                 const newIndex = selectedImage.index < galeriList.length - 1 ? selectedImage.index + 1 : 0;
                 setSelectedImage({
@@ -1059,10 +1057,10 @@ export default function Home() {
                   className="max-w-full max-h-full object-contain rounded-lg"
                 />
               </div>
-              
+
               {/* Image Info */}
               {selectedImage.title && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="mt-6 text-center"
@@ -1095,7 +1093,7 @@ export default function Home() {
                 <FaMapMarkerAlt className="text-lg" />
                 Lokasi
               </motion.div>
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -1109,7 +1107,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6 rounded-full"
               ></motion.div>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -1120,7 +1118,7 @@ export default function Home() {
             </div>
 
             {/* Main Content */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -1140,7 +1138,7 @@ export default function Home() {
                     loading="lazy"
                     className="relative z-0"
                   ></iframe>
-                  
+
                   {/* Map Overlay Info */}
                   <div className="absolute top-4 left-4 z-20">
                     <div className="bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-lg">
@@ -1151,7 +1149,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Contact Section */}
                 <div className="lg:w-1/2 p-8 lg:p-12 bg-gradient-to-br from-green-50 to-blue-50">
                   <motion.div
@@ -1165,10 +1163,10 @@ export default function Home() {
                       </div>
                       Informasi Lokasi
                     </h3>
-                    
+
                     <div className="space-y-6">
                       {/* Address */}
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.6 }}
@@ -1185,17 +1183,17 @@ export default function Home() {
                         </div>
                       </motion.div>
                     </div>
-                    
+
                     {/* Action Buttons */}
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.9 }}
                       className="mt-8 flex justify-center"
                     >
-                      <a 
-                        href="https://maps.app.goo.gl/hAsbEuUTYGrTfEW37" 
-                        target="_blank" 
+                      <a
+                        href="https://maps.app.goo.gl/hAsbEuUTYGrTfEW37"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                       >

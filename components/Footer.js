@@ -1,4 +1,4 @@
-﻿import Image from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -124,14 +124,20 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-white/20 pt-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
-            <div className="text-center lg:text-left">
+          <div className="flex flex-col items-center space-y-3">
+            <div className="text-center">
               <p className="text-white/70 text-sm">
                 &copy; {new Date().getFullYear()} Desa Baula. Semua hak cipta dilindungi.
               </p>
             </div>
             <div className="flex items-center space-x-2 text-xs text-white/60">
-              <span>Dikembangkan untuk Desa Baula, Kec. Tellu Limpoe, Kab. Sidrap </span>
+              <span>Dikembangkan untuk Desa Baula, Kec. Tellu Limpoe, Kab. Sidrap</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2">
+              <span className="text-emerald-300 text-lg">🎓</span>
+              <span className="text-white/90 text-xs font-semibold tracking-wide">
+                Dikembangkan oleh KKNT116 Universitas Hasanuddin
+              </span>
             </div>
           </div>
         </div>
