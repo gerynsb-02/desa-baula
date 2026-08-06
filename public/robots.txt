@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://desa-baula.id/sitemap.xml
+Sitemap: https://desabaula.site/sitemap.xml
 
 # Disallow admin pages
 Disallow: /admin/

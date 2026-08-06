@@ -44,11 +44,11 @@ export default function Profil() {
   return (
     <div className='pt-15'>
     <Layout 
-      title="Profil Desa"
-      description="Profil lengkap Desa Baula - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah. Kenali lebih dekat kelurahan kami."
-      keywords="profil kelurahan baula, sejarah kelurahan, visi misi kelurahan, struktur pemerintahan, peta wilayah kelurahan, kelurahan sulawesi selatan"
+      title="Profil Desa Baula"
+      description="Profil lengkap Desa Baula - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah Desa Baula, Kecamatan Tellu Limpoe, Kabupaten Sidrap, Sulawesi Selatan."
+      keywords="profil desa baula, sejarah desa baula, visi misi kelurahan baula, struktur pemerintahan baula, peta wilayah baula, kabupaten sidrap, sulawesi selatan, desabaula.site"
       image="/images/header.jpg"
-      url="https://desa-baula.online/profil"
+      url="https://desabaula.site/profil"
       type="website"
     >
       {/* Structured Data for Profile Page */}
@@ -60,11 +60,11 @@ export default function Profil() {
             "@type": "WebPage",
             "name": "Profil Desa Baula",
             "description": "Profil lengkap Desa Baula - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah",
-            "url": "https://desa-baula.online/profil",
+            "url": "https://desabaula.site/profil",
             "mainEntity": {
               "@type": "GovernmentOrganization",
               "name": "Desa Baula",
-              "description": "Desa Baula adalah salah satu kelurahan di Sulawesi Selatan",
+              "description": "Desa Baula, Kecamatan Tellu Limpoe, Kabupaten Sidenreng Rappang, Sulawesi Selatan",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Baula",

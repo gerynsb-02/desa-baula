@@ -1,7 +1,7 @@
 import { collection, getDocs, orderBy, query } from 'firebase/firestore'
 import { db } from '../lib/firebase'
 
-const SITE_URL = 'https://desa-baula.id'
+const SITE_URL = 'https://desabaula.site'
 
 function generateSiteMap(pages, beritaList) {
   return `<?xml version="1.0" encoding="UTF-8"?>

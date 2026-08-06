@@ -257,7 +257,7 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
               "@type": "NewsArticle",
               "headline": berita.judul,
               "description": berita.isi.substring(0, 200) + "...",
-              "image": berita.gambar ? (berita.gambar.startsWith('http') ? berita.gambar : `https://desa-baula.id${berita.gambar}`) : "https://desa-baula.id/images/header.jpg",
+              "image": berita.gambar ? (berita.gambar.startsWith('http') ? berita.gambar : `https://desabaula.site${berita.gambar}`) : "https://desabaula.site/images/header.jpg",
               "image:width": 1200,
               "image:height": 630,
               "datePublished": dateToISOString(berita.tanggal),
@@ -265,19 +265,19 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
               "author": {
                 "@type": "Organization",
                 "name": "Desa Baula",
-                "url": "https://desa-baula.id"
+                "url": "https://desabaula.site"
               },
               "publisher": {
                 "@type": "Organization",
                 "name": "Desa Baula",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://desa-baula.id/images/logo.png"
+                  "url": "https://desabaula.site/images/logo.png"
                 }
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `https://desa-baula.id/berita/${berita.slug || berita.id}`
+                "@id": `https://desabaula.site/berita/${berita.slug || berita.id}`
               },
               "wordCount": wordCount,
               "timeRequired": `PT${readingTime}M`,

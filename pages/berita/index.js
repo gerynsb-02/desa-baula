@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import CardBerita from '../../components/CardBerita'
 import { db } from '../../lib/firebase'
@@ -144,11 +144,11 @@ export default function Berita() {
   return (
    <div className='pt-15'>
     <Layout 
-      title="Berita & Pengumuman"
-      description="Informasi terbaru seputar kegiatan, pengumuman, dan berita resmi dari Desa Baula. Update terkini tentang layanan publik dan kegiatan kelurahan."
-      keywords="berita kelurahan baula, pengumuman kelurahan, berita terbaru, informasi kelurahan, kegiatan kelurahan, layanan publik"
+      title="Berita & Pengumuman Desa Baula"
+      description="Berita terbaru dan pengumuman resmi dari Desa Baula, Sulawesi Selatan. Update terkini tentang kegiatan, layanan publik, dan informasi penting kelurahan."
+      keywords="berita desa baula, pengumuman desa baula, berita terbaru baula, informasi kelurahan baula, kegiatan desa, layanan publik baula, desabaula.site"
       image="/images/header.jpg"
-      url="https://desa-baula.online/berita"
+      url="https://desabaula.site/berita"
       type="website"
     >
       {/* Structured Data for News Page */}
@@ -160,7 +160,7 @@ export default function Berita() {
             "@type": "CollectionPage",
             "name": "Berita & Pengumuman - Desa Baula",
             "description": "Informasi terbaru seputar kegiatan, pengumuman, dan berita resmi dari Desa Baula",
-            "url": "https://desa-baula.online/berita",
+            "url": "https://desabaula.site/berita",
             "mainEntity": {
               "@type": "ItemList",
               "itemListElement": beritaList.slice(0, 10).map((berita, index) => ({
@@ -180,7 +180,7 @@ export default function Berita() {
                     "name": "Desa Baula",
                     "logo": {
                       "@type": "ImageObject",
-                      "url": "https://desa-baula.online/images/logo.png"
+                      "url": "https://desabaula.site/images/logo.png"
                     }
                   }
                 }

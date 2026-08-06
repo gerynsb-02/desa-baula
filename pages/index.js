@@ -134,11 +134,11 @@ export default function Home() {
 
   return (
     <Layout
-      title="Beranda"
-      description="Selamat datang di website resmi Desa Baula. Informasi layanan publik, berita terbaru, dan profil kelurahan yang lengkap."
-      keywords="kelurahan baula, beranda, layanan publik, berita kelurahan, profil kelurahan, pemerintah desa, sulawesi selatan"
+      title="Beranda | Website Resmi Desa Baula"
+      description="Website resmi Desa Baula, Sulawesi Selatan. Temukan informasi layanan publik, berita terkini, profil kelurahan, statistik kependudukan, dan galeri kegiatan desa."
+      keywords="desa baula, desabaula.site, kelurahan baula, beranda, layanan publik baula, berita desa baula, profil kelurahan baula, pemerintah desa, sulawesi selatan, sulsel"
       image="/images/header.jpg"
-      url="https://desa-baula.online"
+      url="https://desabaula.site"
       type="website"
     >
       {/* Structured Data for Homepage */}
@@ -149,15 +149,15 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Beranda - Desa Baula",
-            "description": "Selamat datang di website resmi Desa Baula. Informasi layanan publik, berita terbaru, dan profil kelurahan yang lengkap.",
-            "url": "https://desa-baula.online",
+            "description": "Website resmi Desa Baula, Sulawesi Selatan. Informasi layanan publik, berita terkini, dan profil kelurahan.",
+            "url": "https://desabaula.site",
             "mainEntity": {
               "@type": "WebSite",
               "name": "Desa Baula",
-              "url": "https://desa-baula.online",
+              "url": "https://desabaula.site",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://desa-baula.online/berita?search={search_term_string}",
+                "target": "https://desabaula.site/berita?search={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             }

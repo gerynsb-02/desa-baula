@@ -1,13 +1,13 @@
-﻿import Navbar from './Navbar'
+import Navbar from './Navbar'
 import Footer from './Footer'
 import Head from 'next/head'
 
 export default function Layout({ children, title, description, keywords, image, url, type = 'website' }) {
   const siteName = 'Desa Baula'
   const fullTitle = title ? `${title} - ${siteName}` : siteName
-  const defaultDescription = 'Website resmi Desa Baula - Informasi layanan, berita, dan profil kelurahan terbaru'
+  const defaultDescription = 'Website resmi Desa Baula - Informasi layanan publik, berita terkini, dan profil kelurahan Baula, Sulawesi Selatan'
   const defaultImage = '/images/header.jpg'
-  const defaultUrl = 'https://desa-baula.online'
+  const defaultUrl = 'https://desabaula.site'
   
   // Ensure image URL is absolute
   const getAbsoluteImageUrl = (imageUrl) => {
@@ -26,7 +26,7 @@ export default function Layout({ children, title, description, keywords, image, 
         {/* Basic Meta Tags */}
         <title>{fullTitle}</title>
         <meta name="description" content={description || defaultDescription} />
-        <meta name="keywords" content={keywords || 'kelurahan baula, baula, pangkep, pemerintah desa, layanan publik, berita kelurahan, profil kelurahan, sulawesi selatan'} />
+        <meta name="keywords" content={keywords || 'desa baula, kelurahan baula, desabaula.site, pemerintah desa baula, layanan publik baula, berita baula, profil desa baula, sulawesi selatan, sulsel'} />
         <meta name="author" content="Desa Baula" />
         <meta name="robots" content="index, follow" />
         
@@ -70,7 +70,17 @@ export default function Layout({ children, title, description, keywords, image, 
         {/* Mobile Meta Tags */}
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+        {/* Geo / Local SEO */}
+        <meta name="geo.region" content="ID-SN" />
+        <meta name="geo.placename" content="Desa Baula, Sulawesi Selatan" />
+        <meta name="geo.position" content="-4.0;120.5" />
+        <meta name="ICBM" content="-4.0, 120.5" />
+        <meta name="language" content="Indonesian" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="rating" content="general" />
+
         {/* Performance */}
         <link rel="preload" href="/images/logo.png" as="image" />
         <link rel="preload" href="/images/header.jpg" as="image" />
