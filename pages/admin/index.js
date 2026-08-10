@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { collection, getDocs, doc, getDoc, query, orderBy, limit } from 'firebase/firestore'
 import { db } from '../../lib/firebase'
 import RequireAuth from '../../components/RequireAuth'
@@ -14,7 +14,9 @@ import {
   FiShield,
   FiEdit,
   FiPlus,
-  FiTrash2
+  FiTrash2,
+  FiBook,
+  FiLayers
 } from 'react-icons/fi'
 
 export default function AdminDashboard() {
@@ -239,7 +241,7 @@ export default function AdminDashboard() {
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-slate-800 mb-2">Dashboard Admin</h1>
-            <p className="text-slate-600">Selamat datang di panel administrasi Desa Baula</p>
+            <p className="text-slate-600">Selamat datang di panel administrasi Kelurahan Baula</p>
           </div>
 
           {/* Stats Grid */}
@@ -299,6 +301,20 @@ export default function AdminDashboard() {
               icon={<FiBarChart2 className="w-8 h-8" />}
               href="/admin/data"
               color="purple"
+            />
+            <QuickActionCard 
+              title="Profil Kelurahan"
+              description="Edit sejarah, visi misi, dan batas wilayah"
+              icon={<FiBook className="w-8 h-8" />}
+              href="/admin/profil"
+              color="teal"
+            />
+            <QuickActionCard 
+              title="Layanan Publik"
+              description="Kelola alur, jenis layanan, dan jam operasional"
+              icon={<FiLayers className="w-8 h-8" />}
+              href="/admin/layanan"
+              color="emerald"
             />
           </div>
 
@@ -376,7 +392,9 @@ function QuickActionCard({ title, description, icon, href, color }) {
     blue: 'bg-blue-50 text-blue-600 hover:bg-blue-100',
     green: 'bg-green-50 text-green-600 hover:bg-green-100',
     purple: 'bg-purple-50 text-purple-600 hover:bg-purple-100',
-    orange: 'bg-orange-50 text-orange-600 hover:bg-orange-100'
+    orange: 'bg-orange-50 text-orange-600 hover:bg-orange-100',
+    teal: 'bg-teal-50 text-teal-600 hover:bg-teal-100',
+    emerald: 'bg-emerald-50 text-emerald-600 hover:bg-emerald-100'
   }
 
   return (

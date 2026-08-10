@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -78,7 +78,7 @@ export default function Navbar() {
                         >
                             <Image 
                                 src="/images/logo.png" 
-                                alt="Logo Desa Baula" 
+                                alt="Logo Kelurahan Baula" 
                                 width={48}
                                 height={48}
                                 className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 object-contain"
@@ -86,7 +86,7 @@ export default function Navbar() {
                         </motion.div>
                         <div className="block">
                             <h1 className={`font-bold text-xs sm:text-sm lg:text-lg transition-colors duration-300 ${getTextColor()}`}>
-                                Desa Baula
+                                Kelurahan Baula
                             </h1>
                             <p className={`text-xs transition-colors duration-300 ${getSubtitleColor()}`}>
                                 Kec. Tellu Limpoe, Kab. Sidrap

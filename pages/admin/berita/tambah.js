@@ -1,4 +1,4 @@
-// pages/admin/berita/tambah.js
+﻿// pages/admin/berita/tambah.js
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { db, generateUniqueSlug } from '../../../lib/firebase'
@@ -68,7 +68,7 @@ export default function TambahBerita() {
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h1 className="text-2xl font-bold text-green-700">Tambah Berita Baru</h1>
-                <p className="text-gray-600 mt-1">Buat berita baru untuk website Desa Baula</p>
+                <p className="text-gray-600 mt-1">Buat berita baru untuk website Kelurahan Baula</p>
               </div>
               <Link 
                 href="/admin/berita" 
@@ -121,7 +121,7 @@ export default function TambahBerita() {
                   </label>
                   <input 
                     type="text" 
-                    placeholder="Contoh: Humas Desa Baula" 
+                    placeholder="Contoh: Humas Kelurahan Baula" 
                     value={sumber} 
                     onChange={(e) => setSumber(e.target.value)} 
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900" 

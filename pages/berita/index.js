@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import CardBerita from '../../components/CardBerita'
 import { db } from '../../lib/firebase'
@@ -144,9 +144,9 @@ export default function Berita() {
   return (
    <div className='pt-15'>
     <Layout 
-      title="Berita & Pengumuman Desa Baula"
-      description="Berita terbaru dan pengumuman resmi dari Desa Baula, Sulawesi Selatan. Update terkini tentang kegiatan, layanan publik, dan informasi penting kelurahan."
-      keywords="berita desa baula, pengumuman desa baula, berita terbaru baula, informasi kelurahan baula, kegiatan desa, layanan publik baula, desabaula.site"
+      title="Berita & Pengumuman Kelurahan Baula"
+      description="Berita terbaru dan pengumuman resmi dari Kelurahan Baula, Sulawesi Selatan. Update terkini tentang kegiatan, layanan publik, dan informasi penting kelurahan."
+      keywords="berita kelurahan baula, pengumuman kelurahan baula, berita terbaru baula, informasi kelurahan baula, kegiatan desa, layanan publik baula, desabaula.site"
       image="/images/header.jpg"
       url="https://desabaula.site/berita"
       type="website"
@@ -158,8 +158,8 @@ export default function Berita() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Berita & Pengumuman - Desa Baula",
-            "description": "Informasi terbaru seputar kegiatan, pengumuman, dan berita resmi dari Desa Baula",
+            "name": "Berita & Pengumuman - Kelurahan Baula",
+            "description": "Informasi terbaru seputar kegiatan, pengumuman, dan berita resmi dari Kelurahan Baula",
             "url": "https://desabaula.site/berita",
             "mainEntity": {
               "@type": "ItemList",
@@ -173,11 +173,11 @@ export default function Berita() {
                                      "datePublished": dateToISOString(berita.tanggal),
                   "author": {
                     "@type": "Organization",
-                    "name": "Desa Baula"
+                    "name": "Kelurahan Baula"
                   },
                   "publisher": {
                     "@type": "Organization",
-                    "name": "Desa Baula",
+                    "name": "Kelurahan Baula",
                     "logo": {
                       "@type": "ImageObject",
                       "url": "https://desabaula.site/images/logo.png"
@@ -217,7 +217,7 @@ export default function Berita() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-green-100 max-w-3xl mx-auto"
           >
-            Informasi terbaru seputar kegiatan dan pengumuman resmi Desa Baula
+            Informasi terbaru seputar kegiatan dan pengumuman resmi Kelurahan Baula
           </motion.p>
         </div>
       </div>

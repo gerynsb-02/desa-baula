@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from "next/document";
+﻿import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
@@ -29,18 +29,18 @@ export default function Document() {
         
         {/* Open Graph Default */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Desa Baula" />
+        <meta property="og:site_name" content="Kelurahan Baula" />
         <meta property="og:locale" content="id_ID" />
         <meta property="og:image" content="https://desabaula.site/images/logo.png" />
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
-        <meta property="og:image:alt" content="Logo Desa Baula" />
+        <meta property="og:image:alt" content="Logo Kelurahan Baula" />
         
         {/* Twitter Card Default */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@desa_baula" />
         <meta name="twitter:image" content="https://desabaula.site/images/logo.png" />
-        <meta name="twitter:image:alt" content="Logo Desa Baula" />
+        <meta name="twitter:image:alt" content="Logo Kelurahan Baula" />
         
         {/* Structured Data - Organization */}
         <script
@@ -49,8 +49,8 @@ export default function Document() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "GovernmentOrganization",
-              "name": "Desa Baula",
-              "description": "Website resmi Desa Baula - Informasi layanan publik, berita terkini, dan profil kelurahan Baula, Sulawesi Selatan",
+              "name": "Kelurahan Baula",
+              "description": "Website resmi Kelurahan Baula - Informasi layanan publik, berita terkini, dan profil kelurahan Baula, Sulawesi Selatan",
               "url": "https://desabaula.site",
               "logo": "https://desabaula.site/images/logo.png",
               "image": "https://desabaula.site/images/header.jpg",

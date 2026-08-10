@@ -6,18 +6,18 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Test Artikel Berita - Desa Baula</title>
+      <title>Test Artikel Berita - Kelurahan Baula</title>
       
       <!-- Basic Meta Tags -->
       <meta name="description" content="Ini adalah artikel test untuk memastikan preview gambar berita berfungsi dengan baik saat di-share di media sosial." />
       <meta name="keywords" content="test, berita, kelurahan baula" />
-      <meta name="author" content="Desa Baula" />
+      <meta name="author" content="Kelurahan Baula" />
       
       <!-- Canonical URL -->
       <link rel="canonical" href="https://desa-baula.online/api/og-image" />
       
       <!-- Open Graph Meta Tags -->
-      <meta property="og:title" content="Test Artikel Berita - Desa Baula" />
+      <meta property="og:title" content="Test Artikel Berita - Kelurahan Baula" />
       <meta property="og:description" content="Ini adalah artikel test untuk memastikan preview gambar berita berfungsi dengan baik saat di-share di media sosial." />
       <meta property="og:image" content="https://desa-baula.online/images/header.jpg" />
       <meta property="og:image:width" content="1200" />
@@ -27,12 +27,12 @@
       <meta property="og:image:secure_url" content="https://desa-baula.online/images/header.jpg" />
       <meta property="og:url" content="https://desa-baula.online/api/og-image" />
       <meta property="og:type" content="article" />
-      <meta property="og:site_name" content="Desa Baula" />
+      <meta property="og:site_name" content="Kelurahan Baula" />
       <meta property="og:locale" content="id_ID" />
       
       <!-- Twitter Card Meta Tags -->
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Test Artikel Berita - Desa Baula" />
+      <meta name="twitter:title" content="Test Artikel Berita - Kelurahan Baula" />
       <meta name="twitter:description" content="Ini adalah artikel test untuk memastikan preview gambar berita berfungsi dengan baik saat di-share di media sosial." />
       <meta name="twitter:image" content="https://desa-baula.online/images/header.jpg" />
       <meta name="twitter:image:alt" content="Test Artikel Berita" />

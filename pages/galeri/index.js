@@ -77,9 +77,9 @@ export default function GaleriPage() {
       const urlObj = new URL(url)
       const pathname = urlObj.pathname
       const filename = pathname.split('/').pop().split('?')[0]
-      return filename || 'Galeri Desa Baula'
+      return filename || 'Galeri Kelurahan Baula'
     } catch {
-      return 'Galeri Desa Baula'
+      return 'Galeri Kelurahan Baula'
     }
   }
 
@@ -87,8 +87,8 @@ export default function GaleriPage() {
     <div className='pt-15'>
     <Layout>
       <Head>
-        <title>Galeri - Desa Baula</title>
-        <meta name="description" content="Galeri foto kegiatan Desa Baula" />
+        <title>Galeri - Kelurahan Baula</title>
+        <meta name="description" content="Galeri foto kegiatan Kelurahan Baula" />
       </Head>
       
       {/* Hero Section */}
@@ -118,7 +118,7 @@ export default function GaleriPage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-green-100 max-w-3xl mx-auto"
           >
-            Dokumentasi kegiatan dan momen penting Desa Baula
+            Dokumentasi kegiatan dan momen penting Kelurahan Baula
           </motion.p>
         </div>
       </div>

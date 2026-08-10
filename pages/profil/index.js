@@ -1,7 +1,7 @@
 import Layout from '../../components/Layout'
 import Head from 'next/head'
 import { db } from '../../lib/firebase'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, doc, getDoc } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -9,14 +9,43 @@ import {
   FaHistory, FaBullseye, FaUsers, FaMapMarkedAlt, FaLandmark, FaGlobe, FaUserFriends, FaMountain, FaUtensils, FaCheckCircle, FaClipboardList, FaUserTie, FaMapMarkerAlt, FaChartBar, FaHome, FaMale, FaFemale, FaIdCard, FaUser
 } from 'react-icons/fa'
 
+// ─── Default fallback content ─────────────────────────────────────────────────
+const DEFAULT_PROFIL = {
+  sejarah: {
+    asalUsul: 'Baula adalah kelurahan di Kecamatan Tellu Limpoe, Kabupaten Sidenreng Rappang (Sidrap), Sulawesi Selatan. Kelurahan Baula merupakan salah satu kelurahan yang terus berkembang di wilayah Kabupaten Sidrap.',
+    letakGeografis: 'Terletak sekitar 48 km dari pusat kabupaten dengan waktu tempuh 1.5 jam. Wilayah ini dikelilingi oleh hamparan sawah dan dialiri sungai yang menjadi sumber kehidupan masyarakat.',
+    kehidupanMasyarakat: 'Mayoritas penduduk bekerja sebagai petani, pedagang, dan peternak. Masyarakat Kelurahan Baula dikenal dengan semangat gotong royong yang tinggi dalam membangun daerahnya.',
+    potensiWisata: 'Kelurahan Baula menawarkan potensi alam dan budaya yang beragam. Masyarakat kelurahan terus berupaya mengembangkan potensi lokal untuk meningkatkan kesejahteraan warga.',
+    budayaKuliner: 'Memiliki kekayaan budaya seperti Festival Koro-Korona Balocci dan kuliner khas seperti Baruasa Tekko, Kopi Bulusaraung, dan Kopi Kedelai yang menjadi daya tarik wisatawan.'
+  },
+  visiMisi: {
+    visi: 'Tercapainya Pelayanan Kepada Masyarakat yang Inovatif dan Profesional',
+    misi: [
+      'Mewujudkan pelayanan kepada dan sumber daya masyarakat yang berkualitas dan adil',
+      'Meningkatkan potensi sumber daya alam',
+      'Mewujudkan pembangunan berbasis kesejahteraan rakyat',
+      'Meningkatkan potensi pariwisata berbasis komunitas',
+      'Meningkatkan kebersamaan aparatur pemerintah dan masyarakat dalam membangun kreatifitas'
+    ]
+  },
+  batasWilayah: {
+    utara: 'Kelurahan Balocci',
+    timur: 'Laut Flores',
+    selatan: 'Kelurahan Bontoa',
+    barat: 'Kelurahan Bungoro'
+  }
+}
+
 export default function Profil() {
   const [strukturList, setStrukturList] = useState([])
+  const [profilData, setProfilData] = useState(DEFAULT_PROFIL)
   const [loading, setLoading] = useState(true)
   const [activeTab, setActiveTab] = useState('sejarah')
 
   useEffect(() => {
-    const fetchStruktur = async () => {
+    const fetchAll = async () => {
       try {
+        // Fetch struktur data
         const strukturSnapshot = await getDocs(collection(db, 'struktur'))
         const strukturData = strukturSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
         
@@ -24,29 +53,47 @@ export default function Profil() {
         const sortedStrukturData = strukturData.sort((a, b) => {
           const aIsLurah = a.jabatan.toLowerCase().includes('lurah')
           const bIsLurah = b.jabatan.toLowerCase().includes('lurah')
-          
           if (aIsLurah && !bIsLurah) return -1
           if (!aIsLurah && bIsLurah) return 1
           return 0
         })
-        
         setStrukturList(sortedStrukturData)
+
+        // Fetch profil content from Firestore
+        const profilSnap = await getDoc(doc(db, 'profil', 'konten'))
+        if (profilSnap.exists()) {
+          const data = profilSnap.data()
+          setProfilData({
+            sejarah: { ...DEFAULT_PROFIL.sejarah, ...data.sejarah },
+            visiMisi: {
+              ...DEFAULT_PROFIL.visiMisi,
+              ...data.visiMisi,
+              misi: data.visiMisi?.misi || DEFAULT_PROFIL.visiMisi.misi
+            },
+            batasWilayah: { ...DEFAULT_PROFIL.batasWilayah, ...data.batasWilayah }
+          })
+        }
       } catch (error) {
-        console.error('Error fetching struktur data:', error)
+        console.error('Error fetching profil data:', error)
       } finally {
         setLoading(false)
       }
     }
 
-    fetchStruktur()
+    fetchAll()
   }, [])
+
+  // Shorthand accessors
+  const sejarah = profilData.sejarah
+  const { visi, misi } = profilData.visiMisi
+  const batas = profilData.batasWilayah
 
   return (
     <div className='pt-15'>
     <Layout 
-      title="Profil Desa Baula"
-      description="Profil lengkap Desa Baula - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah Desa Baula, Kecamatan Tellu Limpoe, Kabupaten Sidrap, Sulawesi Selatan."
-      keywords="profil desa baula, sejarah desa baula, visi misi kelurahan baula, struktur pemerintahan baula, peta wilayah baula, kabupaten sidrap, sulawesi selatan, desabaula.site"
+      title="Profil Kelurahan Baula"
+      description="Profil lengkap Kelurahan Baula - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah Kelurahan Baula, Kecamatan Tellu Limpoe, Kabupaten Sidrap, Sulawesi Selatan."
+      keywords="profil kelurahan baula, sejarah kelurahan baula, visi misi kelurahan baula, struktur pemerintahan baula, peta wilayah baula, kabupaten sidrap, sulawesi selatan, desabaula.site"
       image="/images/header.jpg"
       url="https://desabaula.site/profil"
       type="website"
@@ -58,13 +105,13 @@ export default function Profil() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Profil Desa Baula",
-            "description": "Profil lengkap Desa Baula - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah",
+            "name": "Profil Kelurahan Baula",
+            "description": "Profil lengkap Kelurahan Baula - Sejarah, visi misi, struktur pemerintahan, dan peta wilayah",
             "url": "https://desabaula.site/profil",
             "mainEntity": {
               "@type": "GovernmentOrganization",
-              "name": "Desa Baula",
-              "description": "Desa Baula, Kecamatan Tellu Limpoe, Kabupaten Sidenreng Rappang, Sulawesi Selatan",
+              "name": "Kelurahan Baula",
+              "description": "Kelurahan Baula, Kecamatan Tellu Limpoe, Kabupaten Sidenreng Rappang, Sulawesi Selatan",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Baula",
@@ -77,7 +124,7 @@ export default function Profil() {
                 "jobTitle": struktur.jabatan,
                 "worksFor": {
                   "@type": "Organization",
-                  "name": "Desa Baula"
+                  "name": "Kelurahan Baula"
                 }
               }))
             }
@@ -96,7 +143,7 @@ export default function Profil() {
             className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium mb-6"
           >
             <FaLandmark className="text-lg" />
-            Profil Desa
+            Profil Kelurahan
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -104,7 +151,7 @@ export default function Profil() {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
           >
-            Profil Desa Baula
+            Profil Kelurahan Baula
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -112,7 +159,7 @@ export default function Profil() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-green-100 max-w-3xl mx-auto"
           >
-            Mengenal lebih dekat sejarah, visi misi, dan struktur pemerintahan Desa Baula
+            Mengenal lebih dekat sejarah, visi misi, dan struktur pemerintahan Kelurahan Baula
           </motion.p>
         </div>
       </div>
@@ -167,7 +214,7 @@ export default function Profil() {
               <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 lg:bottom-6 lg:left-6">
                 <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg flex items-center gap-2 sm:gap-3">
                   <FaHistory className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
-                  <span className="hidden sm:inline">Sejarah Desa Baula</span>
+                  <span className="hidden sm:inline">Sejarah Kelurahan Baula</span>
                   <span className="sm:hidden">Sejarah</span>
                 </h2>
               </div>
@@ -188,7 +235,7 @@ export default function Profil() {
                       Asal Usul
                     </h3>
                     <p className="text-sm sm:text-base leading-relaxed text-gray-700">
-                      Baula adalah desa di Kecamatan Tellu Limpoe, Kabupaten Sidenreng Rappang (Sidrap), Sulawesi Selatan. Desa Baula merupakan salah satu desa yang terus berkembang di wilayah Kabupaten Sidrap.
+                      {sejarah.asalUsul}
                     </p>
                   </motion.div>
                   <motion.div 
@@ -204,7 +251,7 @@ export default function Profil() {
                       Letak Geografis
                     </h3>
                     <p className="text-sm sm:text-base leading-relaxed text-gray-700">
-                      Terletak sekitar 48 km dari pusat kabupaten dengan waktu tempuh 1.5 jam. Wilayah ini dikelilingi oleh hamparan sawah dan dialiri sungai yang menjadi sumber kehidupan masyarakat.
+                      {sejarah.letakGeografis}
                     </p>
                   </motion.div>
                 </div>
@@ -222,7 +269,7 @@ export default function Profil() {
                     Kehidupan Masyarakat
                   </h3>
                   <p className="text-sm sm:text-base leading-relaxed text-gray-700">
-                    Mayoritas penduduk bekerja sebagai petani, pedagang, dan peternak. Masyarakat Desa Baula dikenal dengan semangat gotong royong yang tinggi dalam membangun daerahnya.
+                    {sejarah.kehidupanMasyarakat}
                   </p>
                 </motion.div>
 
@@ -240,7 +287,7 @@ export default function Profil() {
                       Potensi Wisata
                     </h3>
                     <p className="text-sm sm:text-base leading-relaxed text-gray-700">
-                      Desa Baula menawarkan potensi alam dan budaya yang beragam. Masyarakat desa terus berupaya mengembangkan potensi lokal untuk meningkatkan kesejahteraan warga.
+                      {sejarah.potensiWisata}
                     </p>
                   </motion.div>
                   <motion.div 
@@ -256,7 +303,7 @@ export default function Profil() {
                       Budaya & Kuliner
                     </h3>
                     <p className="text-sm sm:text-base leading-relaxed text-gray-700">
-                      Memiliki kekayaan budaya seperti Festival Koro-Korona Balocci dan kuliner khas seperti Baruasa Tekko, Kopi Bulusaraung, dan Kopi Kedelai yang menjadi daya tarik wisatawan.
+                      {sejarah.budayaKuliner}
                     </p>
                   </motion.div>
                 </div>
@@ -282,7 +329,7 @@ export default function Profil() {
               <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white p-2 sm:p-3 rounded-xl">
                 <FaBullseye className="text-xl sm:text-2xl lg:text-3xl" />
               </div>
-              <span className="hidden sm:inline">Visi & Misi Desa Baula</span>
+              <span className="hidden sm:inline">Visi & Misi Kelurahan Baula</span>
               <span className="sm:hidden">Visi & Misi</span>
             </motion.h2>
             
@@ -302,7 +349,7 @@ export default function Profil() {
                 </div>
                 <div className="bg-gradient-to-r from-green-50 to-green-100 p-4 sm:p-6 lg:p-8 rounded-xl border border-green-200">
                   <p className="text-gray-800 text-sm sm:text-base lg:text-lg leading-relaxed font-medium italic text-center">
-                    &ldquo;Tercapainya Pelayanan Kepada Masyarakat yang Inovatif dan Profesional&rdquo;
+                    &ldquo;{visi}&rdquo;
                   </p>
                 </div>
               </motion.div>
@@ -321,13 +368,7 @@ export default function Profil() {
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-700">Misi</h3>
                 </div>
                 <ul className="space-y-2 sm:space-y-3 lg:space-y-4">
-                  {[
-                    "Mewujudkan pelayanan kepada dan sumber daya masyarakat yang berkualitas dan adil",
-                    "Meningkatkan potensi sumber daya alam",
-                    "Mewujudkan pembangunan berbasis kesejahteraan rakyat",
-                    "Meningkatkan potensi pariwisata berbasis komunitas",
-                    "Meningkatkan kebersamaan aparatur pemerintah dan masyarakat dalam membangun kreatifitas"
-                  ].map((misi, index) => (
+                  {misi.map((item, index) => (
                     <motion.li 
                       key={index} 
                       initial={{ opacity: 0, x: 20 }}
@@ -339,7 +380,7 @@ export default function Profil() {
                         {index + 1}
                       </span>
                       <p className="text-xs sm:text-sm lg:text-base text-gray-700 leading-relaxed pt-0.5 sm:pt-1">
-                        {misi}
+                        {item}
                       </p>
                     </motion.li>
                   ))}
@@ -368,7 +409,7 @@ export default function Profil() {
               <span className="sm:hidden">Struktur</span>
             </h2>
             <p className="text-gray-600 text-xs sm:text-sm lg:text-base max-w-2xl mx-auto">
-              Kenali para pemimpin dan struktur organisasi Desa Baula
+              Kenali para pemimpin dan struktur organisasi Kelurahan Baula
             </p>
           </motion.div>
           
@@ -391,17 +432,13 @@ export default function Profil() {
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6"
             >
               {(() => {
-                // Group by jabatan while preserving order
                 const groupedStruktur = strukturList.reduce((acc, struktur) => {
                   const jabatan = struktur.jabatan;
-                  if (!acc[jabatan]) {
-                    acc[jabatan] = [];
-                  }
+                  if (!acc[jabatan]) acc[jabatan] = [];
                   acc[jabatan].push(struktur);
                   return acc;
                 }, {});
 
-                // Create ordered array of jabatan to preserve Lurah first order
                 const orderedJabatan = [...new Set(strukturList.map(item => item.jabatan))];
 
                 return orderedJabatan.map((jabatan, index) => {
@@ -422,7 +459,6 @@ export default function Profil() {
                       </div>
                       <div className="p-3 sm:p-4 lg:p-6">
                         {strukturGroup.length === 1 ? (
-                          // Single person - show as card
                           <div className="text-center">
                             <div className="w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto rounded-full overflow-hidden border-2 sm:border-4 border-green-100 mb-3 sm:mb-4 shadow-lg bg-gray-100 flex items-center justify-center">
                               {strukturGroup[0].foto ? (
@@ -452,7 +488,6 @@ export default function Profil() {
                             )}
                           </div>
                         ) : (
-                          // Multiple people - show as list
                           <ul className="space-y-2 sm:space-y-3 lg:space-y-4">
                             {strukturGroup.map((struktur) => (
                               <li key={struktur.id} className="flex items-center p-2 sm:p-3 lg:p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
@@ -513,7 +548,7 @@ export default function Profil() {
               <span className="sm:hidden">Peta Wilayah</span>
             </h2>
             <p className="text-gray-600 text-xs sm:text-sm lg:text-base max-w-2xl mx-auto">
-              Temukan lokasi dan batas wilayah Desa Baula
+              Temukan lokasi dan batas wilayah Kelurahan Baula
             </p>
           </motion.div>
           
@@ -546,7 +581,7 @@ export default function Profil() {
                   allowFullScreen="" 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title='Peta Wilayah Desa Baula'
+                  title='Peta Wilayah Kelurahan Baula'
                 ></iframe>
               </div>
               <div className="max-w-2xl mx-auto">
@@ -564,10 +599,10 @@ export default function Profil() {
                   </h3>
                   <ul className="space-y-2 sm:space-y-3 lg:space-y-4">
                     {[
-                      { arah: 'Utara', batas: 'Kelurahan Balocci', icon: '⬆️' },
-                      { arah: 'Timur', batas: 'Laut Flores', icon: '➡️' },
-                      { arah: 'Selatan', batas: 'Kelurahan Bontoa', icon: '⬇️' },
-                      { arah: 'Barat', batas: 'Kelurahan Bungoro', icon: '⬅️' }
+                      { arah: 'Utara', batas: batas.utara, icon: '⬆️' },
+                      { arah: 'Timur', batas: batas.timur, icon: '➡️' },
+                      { arah: 'Selatan', batas: batas.selatan, icon: '⬇️' },
+                      { arah: 'Barat', batas: batas.barat, icon: '⬅️' }
                     ].map((item, index) => (
                       <motion.li 
                         key={index}

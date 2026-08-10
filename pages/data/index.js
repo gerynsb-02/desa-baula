@@ -125,7 +125,7 @@ export default function Data() {
     <div className='pt-15'>
     <Layout title="Data & Statistik">
       <Head>
-        <meta name="description" content="Data dan statistik terbaru Desa Baula" />
+        <meta name="description" content="Data dan statistik terbaru Kelurahan Baula" />
       </Head>
 
       {/* Hero Section */}
@@ -147,7 +147,7 @@ export default function Data() {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
           >
-            Data & Statistik Desa Baula
+            Data & Statistik Kelurahan Baula
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -192,7 +192,7 @@ export default function Data() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto"
           >
-            Data terbaru kependudukan Desa Baula
+            Data terbaru kependudukan Kelurahan Baula
           </motion.p>
         </motion.div>
 
@@ -525,7 +525,7 @@ export default function Data() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto"
             >
-              Data yang ditampilkan bersumber dari catatan resmi Desa Baula
+              Data yang ditampilkan bersumber dari catatan resmi Kelurahan Baula
             </motion.p>
           </div>
           

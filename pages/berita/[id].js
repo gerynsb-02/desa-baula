@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+﻿import { useRouter } from 'next/router'
 import { collection, query, where, getDocs } from 'firebase/firestore'
 import { db } from '../../lib/firebase'
 import { useEffect, useState } from 'react'
@@ -61,7 +61,7 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
   }, [slug])
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
-  const shareText = berita ? `${berita.judul} - Desa Baula` : ''
+  const shareText = berita ? `${berita.judul} - Kelurahan Baula` : ''
 
   const handleShare = (platform) => {
     let url = ''
@@ -243,7 +243,7 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
              <Layout 
          title={berita.judul}
          description={berita.isi.substring(0, 160) + '...'}
-         keywords={`${berita.judul}, berita desa baula, ${berita.kategori || 'informasi desa'}, desa baula`}
+         keywords={`${berita.judul}, berita kelurahan baula, ${berita.kategori || 'informasi desa'}, kelurahan baula`}
          image={berita.gambar || '/images/header.jpg'}
          url={`/berita/${berita.slug || berita.id}`}
          type="article"
@@ -264,12 +264,12 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
               "dateModified": dateToISOString(berita.tanggal),
               "author": {
                 "@type": "Organization",
-                "name": "Desa Baula",
+                "name": "Kelurahan Baula",
                 "url": "https://desabaula.site"
               },
               "publisher": {
                 "@type": "Organization",
-                "name": "Desa Baula",
+                "name": "Kelurahan Baula",
                 "logo": {
                   "@type": "ImageObject",
                   "url": "https://desabaula.site/images/logo.png"
@@ -282,7 +282,7 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
               "wordCount": wordCount,
               "timeRequired": `PT${readingTime}M`,
               "articleSection": berita.kategori || "Berita Umum",
-              "keywords": `${berita.judul}, berita desa baula, ${berita.kategori || 'informasi desa'}`
+              "keywords": `${berita.judul}, berita kelurahan baula, ${berita.kategori || 'informasi desa'}`
             })
           }}
         />
@@ -494,7 +494,7 @@ export default function DetailBerita({ berita: initialBerita, error: initialErro
               
               <div className="text-sm text-gray-500 text-center order-1 sm:order-2">
                 <p>Terakhir diperbarui: {tanggalFormatted}</p>
-                <p className="mt-1">© {new Date().getFullYear()} Desa Baula</p>
+                <p className="mt-1">© {new Date().getFullYear()} Kelurahan Baula</p>
               </div>
             </div>
           </motion.div>

@@ -1,4 +1,4 @@
-// pages/admin/berita/edit.js
+﻿// pages/admin/berita/edit.js
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { doc, getDoc, updateDoc } from 'firebase/firestore'
@@ -168,7 +168,7 @@ export default function EditBerita() {
                   </label>
                   <input
                     type="text"
-                    placeholder="Contoh: Humas Desa Baula"
+                    placeholder="Contoh: Humas Kelurahan Baula"
                     value={sumber}
                     onChange={(e) => setSumber(e.target.value)}
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900"

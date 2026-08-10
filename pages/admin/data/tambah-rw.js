@@ -51,7 +51,7 @@ export default function TambahRW() {
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h1 className="text-2xl font-bold text-green-700">Tambah Data RW Baru</h1>
-                <p className="text-gray-600 mt-1">Buat data RW baru untuk Desa Baula</p>
+                <p className="text-gray-600 mt-1">Buat data RW baru untuk Kelurahan Baula</p>
               </div>
               <Link 
                 href="/admin/data" 

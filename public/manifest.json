@@ -1,7 +1,7 @@
-{
-  "name": "Desa Baula",
+﻿{
+  "name": "Kelurahan Baula",
   "short_name": "Baula",
-  "description": "Website resmi Desa Baula - Informasi layanan, berita, dan profil desa",
+  "description": "Website resmi Kelurahan Baula - Informasi layanan, berita, dan profil desa",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#16a34a",

@@ -6,19 +6,19 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Mahasiswa KKN UNHAS Serahkan Website Resmi - Desa Baula</title>
+      <title>Mahasiswa KKN UNHAS Serahkan Website Resmi - Kelurahan Baula</title>
       
       <!-- Basic Meta Tags -->
-      <meta name="description" content="Mahasiswa KKN UNHAS berhasil menyerahkan website resmi dan melatih perangkat Desa Baula untuk pengelolaan digital yang lebih baik." />
+      <meta name="description" content="Mahasiswa KKN UNHAS berhasil menyerahkan website resmi dan melatih perangkat Kelurahan Baula untuk pengelolaan digital yang lebih baik." />
       <meta name="keywords" content="KKN UNHAS, website resmi, kelurahan baula, pelatihan digital" />
-      <meta name="author" content="Desa Baula" />
+      <meta name="author" content="Kelurahan Baula" />
       
       <!-- Canonical URL -->
       <link rel="canonical" href="https://desa-baula.online/berita/mahasiswa-kkn-unhas-serahkan-website-resmi-dan-latih-perangkat-desa-baula" />
       
       <!-- Open Graph Meta Tags -->
-      <meta property="og:title" content="Mahasiswa KKN UNHAS Serahkan Website Resmi - Desa Baula" />
-      <meta property="og:description" content="Mahasiswa KKN UNHAS berhasil menyerahkan website resmi dan melatih perangkat Desa Baula untuk pengelolaan digital yang lebih baik." />
+      <meta property="og:title" content="Mahasiswa KKN UNHAS Serahkan Website Resmi - Kelurahan Baula" />
+      <meta property="og:description" content="Mahasiswa KKN UNHAS berhasil menyerahkan website resmi dan melatih perangkat Kelurahan Baula untuk pengelolaan digital yang lebih baik." />
       <meta property="og:image" content="https://desa-baula.online/images/header.jpg" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -27,13 +27,13 @@
       <meta property="og:image:secure_url" content="https://desa-baula.online/images/header.jpg" />
       <meta property="og:url" content="https://desa-baula.online/berita/mahasiswa-kkn-unhas-serahkan-website-resmi-dan-latih-perangkat-desa-baula" />
       <meta property="og:type" content="article" />
-      <meta property="og:site_name" content="Desa Baula" />
+      <meta property="og:site_name" content="Kelurahan Baula" />
       <meta property="og:locale" content="id_ID" />
       
       <!-- Twitter Card Meta Tags -->
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mahasiswa KKN UNHAS Serahkan Website Resmi - Desa Baula" />
-      <meta name="twitter:description" content="Mahasiswa KKN UNHAS berhasil menyerahkan website resmi dan melatih perangkat Desa Baula untuk pengelolaan digital yang lebih baik." />
+      <meta name="twitter:title" content="Mahasiswa KKN UNHAS Serahkan Website Resmi - Kelurahan Baula" />
+      <meta name="twitter:description" content="Mahasiswa KKN UNHAS berhasil menyerahkan website resmi dan melatih perangkat Kelurahan Baula untuk pengelolaan digital yang lebih baik." />
       <meta name="twitter:image" content="https://desa-baula.online/images/header.jpg" />
       <meta name="twitter:image:alt" content="Mahasiswa KKN UNHAS Serahkan Website Resmi" />
       
@@ -47,7 +47,7 @@
       <p><strong>https://desa-baula.online/berita/mahasiswa-kkn-unhas-serahkan-website-resmi-dan-latih-perangkat-desa-baula</strong></p>
       
       <h2>Artikel: Mahasiswa KKN UNHAS Serahkan Website Resmi</h2>
-      <p>Mahasiswa KKN UNHAS berhasil menyerahkan website resmi dan melatih perangkat Desa Baula untuk pengelolaan digital yang lebih baik.</p>
+      <p>Mahasiswa KKN UNHAS berhasil menyerahkan website resmi dan melatih perangkat Kelurahan Baula untuk pengelolaan digital yang lebih baik.</p>
     </body>
     </html>
   `)

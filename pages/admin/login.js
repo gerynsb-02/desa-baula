@@ -99,8 +99,8 @@ export default function LoginAdmin() {
   return (
     <>
       <Head>
-        <title>Login Admin - Desa Baula</title>
-        <meta name="description" content="Halaman login admin Desa Baula" />
+        <title>Login Admin - Kelurahan Baula</title>
+        <meta name="description" content="Halaman login admin Kelurahan Baula" />
         <meta name="robots" content="noindex, nofollow" />
       </Head>
 
@@ -120,7 +120,7 @@ export default function LoginAdmin() {
               <h1 className="text-xl font-bold text-white mb-1">
                 Admin Panel
               </h1>
-              <p className="text-blue-100 text-sm">Desa Baula</p>
+              <p className="text-blue-100 text-sm">Kelurahan Baula</p>
             </div>
 
             {/* Form */}
@@ -216,7 +216,7 @@ export default function LoginAdmin() {
               {/* Footer */}
               <div className="mt-4 text-center">
                 <p className="text-xs text-gray-500">
-                  © {new Date().getFullYear()} Desa Baula
+                  © {new Date().getFullYear()} Kelurahan Baula
                 </p>
               </div>
             </div>

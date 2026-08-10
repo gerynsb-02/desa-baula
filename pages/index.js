@@ -1,4 +1,4 @@
-import Layout from '../components/Layout'
+﻿import Layout from '../components/Layout'
 import CardBerita from '../components/CardBerita'
 import CardStruktur from '../components/CardStruktur'
 import { db } from '../lib/firebase'
@@ -69,8 +69,8 @@ export default function Home() {
         } else {
           // Fallback to default images if no hero settings
           setHeroImages([
-            { url: '/images/header.jpg', title: 'Pemandangan Desa Baula 1' },
-            { url: '/images/header2.jpg', title: 'Pemandangan Desa Baula 2' }
+            { url: '/images/header.jpg', title: 'Pemandangan Kelurahan Baula 1' },
+            { url: '/images/header2.jpg', title: 'Pemandangan Kelurahan Baula 2' }
           ])
         }
 
@@ -110,8 +110,8 @@ export default function Home() {
         console.error('Error fetching data:', error)
         // Fallback to default images on error
         setHeroImages([
-          { url: '/images/header.jpg', title: 'Pemandangan Desa Baula 1' },
-          { url: '/images/header2.jpg', title: 'Pemandangan Desa Baula 2' }
+          { url: '/images/header.jpg', title: 'Pemandangan Kelurahan Baula 1' },
+          { url: '/images/header2.jpg', title: 'Pemandangan Kelurahan Baula 2' }
         ])
       } finally {
         setLoading({
@@ -134,9 +134,9 @@ export default function Home() {
 
   return (
     <Layout
-      title="Beranda | Website Resmi Desa Baula"
-      description="Website resmi Desa Baula, Sulawesi Selatan. Temukan informasi layanan publik, berita terkini, profil kelurahan, statistik kependudukan, dan galeri kegiatan desa."
-      keywords="desa baula, desabaula.site, kelurahan baula, beranda, layanan publik baula, berita desa baula, profil kelurahan baula, pemerintah desa, sulawesi selatan, sulsel"
+      title="Beranda | Website Resmi Kelurahan Baula"
+      description="Website resmi Kelurahan Baula, Sulawesi Selatan. Temukan informasi layanan publik, berita terkini, profil kelurahan, statistik kependudukan, dan galeri kegiatan desa."
+      keywords="kelurahan baula, desabaula.site, kelurahan baula, beranda, layanan publik baula, berita kelurahan baula, profil kelurahan baula, pemerintah desa, sulawesi selatan, sulsel"
       image="/images/header.jpg"
       url="https://desabaula.site"
       type="website"
@@ -148,12 +148,12 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Beranda - Desa Baula",
-            "description": "Website resmi Desa Baula, Sulawesi Selatan. Informasi layanan publik, berita terkini, dan profil kelurahan.",
+            "name": "Beranda - Kelurahan Baula",
+            "description": "Website resmi Kelurahan Baula, Sulawesi Selatan. Informasi layanan publik, berita terkini, dan profil kelurahan.",
             "url": "https://desabaula.site",
             "mainEntity": {
               "@type": "WebSite",
-              "name": "Desa Baula",
+              "name": "Kelurahan Baula",
               "url": "https://desabaula.site",
               "potentialAction": {
                 "@type": "SearchAction",
@@ -261,7 +261,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
                 >
-                  Desa Baula
+                  Kelurahan Baula
                 </motion.span>
               </motion.h1>
             </motion.div>
@@ -274,7 +274,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto mb-8 md:mb-12 text-white/90 font-medium leading-relaxed"
               >
-                Portal informasi, layanan publik, dan transparansi pemerintahan Desa Baula.
+                Portal informasi, layanan publik, dan transparansi pemerintahan Kelurahan Baula.
                 Kami berkomitmen memberikan pelayanan terbaik untuk masyarakat.
               </motion.p>
             </motion.div>
@@ -413,7 +413,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-lg text-gray-600 max-w-2xl mx-auto"
             >
-              Data terbaru kependudukan Desa Baula
+              Data terbaru kependudukan Kelurahan Baula
             </motion.p>
           </div>
 
@@ -527,7 +527,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
-                Pesan dan komitmen kami untuk melayani masyarakat Desa Baula dengan sepenuh hati
+                Pesan dan komitmen kami untuk melayani masyarakat Kelurahan Baula dengan sepenuh hati
               </motion.p>
             </div>
 
@@ -600,7 +600,7 @@ export default function Home() {
                           Assalamu&apos;alaikum Warrahmatullahi Wabarakatuh
                         </p>
                         <p className="mb-6">
-                          Selamat datang di website resmi Desa Baula. Sebagai Kepala Kelurahan, saya mengucapkan terima kasih atas kepercayaan masyarakat yang telah diberikan kepada kami dalam mengelola pemerintahan di tingkat kelurahan.
+                          Selamat datang di website resmi Kelurahan Baula. Sebagai Kepala Kelurahan, saya mengucapkan terima kasih atas kepercayaan masyarakat yang telah diberikan kepada kami dalam mengelola pemerintahan di tingkat kelurahan.
                         </p>
                         <p className="mb-6">
                           Kami berkomitmen untuk memberikan pelayanan terbaik bagi masyarakat melalui transparansi informasi, layanan publik yang mudah diakses, dan program-program yang berorientasi pada peningkatan kesejahteraan masyarakat.
@@ -656,7 +656,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
-                Tim pengelola Desa Baula yang siap melayani masyarakat dengan profesional dan berdedikasi
+                Tim pengelola Kelurahan Baula yang siap melayani masyarakat dengan profesional dan berdedikasi
               </motion.p>
             </div>
 
@@ -771,7 +771,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
-                Update informasi dan kegiatan terbaru dari Desa Baula untuk masyarakat
+                Update informasi dan kegiatan terbaru dari Kelurahan Baula untuk masyarakat
               </motion.p>
             </div>
 
@@ -891,7 +891,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
-                Dokumentasi kegiatan terbaru dan momen berharga dari Desa Baula
+                Dokumentasi kegiatan terbaru dan momen berharga dari Kelurahan Baula
               </motion.p>
             </div>
 
@@ -931,7 +931,7 @@ export default function Home() {
                         >
                           <NextImage
                             src={item.url}
-                            alt={item.judul || 'Kegiatan Desa Baula'}
+                            alt={item.judul || 'Kegiatan Kelurahan Baula'}
                             width={400}
                             height={400}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -1113,7 +1113,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
-                Temukan lokasi kantor Desa Baula dan hubungi kami untuk informasi lebih lanjut
+                Temukan lokasi kantor Kelurahan Baula dan hubungi kami untuk informasi lebih lanjut
               </motion.p>
             </div>
 
@@ -1129,7 +1129,7 @@ export default function Home() {
                 <div className="lg:w-1/2 h-80 lg:h-96 relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-blue-600/10 z-10 pointer-events-none"></div>
                   <iframe
-                    title="Peta Kantor Desa Baula"
+                    title="Peta Kantor Kelurahan Baula"
                     src="https://maps.google.com/maps?q=Kantor%20Desa%20Baula,%20Tellu%20Limpoe,%20Sidrap&t=&z=14&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
@@ -1178,7 +1178,7 @@ export default function Home() {
                         <div className="flex-1">
                           <h4 className="font-semibold text-gray-800 mb-1">Alamat Kantor</h4>
                           <p className="text-gray-600 leading-relaxed">
-                            Desa Baula, Kec. Tellu Limpoe, Kab. Sidenreng Rappang (Sidrap), Sulawesi Selatan 91661
+                            Kelurahan Baula, Kec. Tellu Limpoe, Kab. Sidenreng Rappang (Sidrap), Sulawesi Selatan 91661
                           </p>
                         </div>
                       </motion.div>

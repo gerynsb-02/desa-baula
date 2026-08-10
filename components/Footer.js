@@ -1,4 +1,4 @@
-import Image from 'next/image'
+﻿import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -22,7 +22,7 @@ export default function Footer() {
                 <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
                   <Image 
                     src="/images/logo.png" 
-                    alt="Logo Desa Baula" 
+                    alt="Logo Kelurahan Baula" 
                     width={60}
                     height={60}
                     className="w-15 h-15 object-contain"
@@ -31,7 +31,7 @@ export default function Footer() {
               </div>
               <div>
                 <h2 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">
-                  Desa Baula
+                  Kelurahan Baula
                 </h2>
                 <p className="text-emerald-200 text-sm font-medium">Kecamatan Tellu Limpoe, Kabupaten Sidrap</p>
               </div>
@@ -48,7 +48,7 @@ export default function Footer() {
                 <div>
                   <h3 className="text-white font-semibold mb-2">Alamat Kantor</h3>
                   <p className="text-white/80 text-sm leading-relaxed">
-                    Desa Baula, Kec. Tellu Limpoe<br />
+                    Kelurahan Baula, Kec. Tellu Limpoe<br />
                     Kab. Sidrap, Sulawesi Selatan
                   </p>
                 </div>
@@ -127,11 +127,11 @@ export default function Footer() {
           <div className="flex flex-col items-center space-y-3">
             <div className="text-center">
               <p className="text-white/70 text-sm">
-                &copy; {new Date().getFullYear()} Desa Baula. Semua hak cipta dilindungi.
+                &copy; {new Date().getFullYear()} Kelurahan Baula. Semua hak cipta dilindungi.
               </p>
             </div>
             <div className="flex items-center space-x-2 text-xs text-white/60">
-              <span>Dikembangkan untuk Desa Baula, Kec. Tellu Limpoe, Kab. Sidrap</span>
+              <span>Dikembangkan untuk Kelurahan Baula, Kec. Tellu Limpoe, Kab. Sidrap</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2">
               <span className="text-emerald-300 text-lg">🎓</span>

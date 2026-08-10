@@ -1,11 +1,11 @@
-import Navbar from './Navbar'
+﻿import Navbar from './Navbar'
 import Footer from './Footer'
 import Head from 'next/head'
 
 export default function Layout({ children, title, description, keywords, image, url, type = 'website' }) {
-  const siteName = 'Desa Baula'
+  const siteName = 'Kelurahan Baula'
   const fullTitle = title ? `${title} - ${siteName}` : siteName
-  const defaultDescription = 'Website resmi Desa Baula - Informasi layanan publik, berita terkini, dan profil kelurahan Baula, Sulawesi Selatan'
+  const defaultDescription = 'Website resmi Kelurahan Baula - Informasi layanan publik, berita terkini, dan profil kelurahan Baula, Sulawesi Selatan'
   const defaultImage = '/images/header.jpg'
   const defaultUrl = 'https://desabaula.site'
   
@@ -26,8 +26,8 @@ export default function Layout({ children, title, description, keywords, image, 
         {/* Basic Meta Tags */}
         <title>{fullTitle}</title>
         <meta name="description" content={description || defaultDescription} />
-        <meta name="keywords" content={keywords || 'desa baula, kelurahan baula, desabaula.site, pemerintah desa baula, layanan publik baula, berita baula, profil desa baula, sulawesi selatan, sulsel'} />
-        <meta name="author" content="Desa Baula" />
+        <meta name="keywords" content={keywords || 'kelurahan baula, kelurahan baula, desabaula.site, pemerintah kelurahan baula, layanan publik baula, berita baula, profil kelurahan baula, sulawesi selatan, sulsel'} />
+        <meta name="author" content="Kelurahan Baula" />
         <meta name="robots" content="index, follow" />
         
         {/* Canonical URL */}
@@ -74,7 +74,7 @@ export default function Layout({ children, title, description, keywords, image, 
 
         {/* Geo / Local SEO */}
         <meta name="geo.region" content="ID-SN" />
-        <meta name="geo.placename" content="Desa Baula, Sulawesi Selatan" />
+        <meta name="geo.placename" content="Kelurahan Baula, Sulawesi Selatan" />
         <meta name="geo.position" content="-4.0;120.5" />
         <meta name="ICBM" content="-4.0, 120.5" />
         <meta name="language" content="Indonesian" />
