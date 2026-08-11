@@ -118,7 +118,7 @@ export default function EditRW() {
                     placeholder="Contoh: RW 001" 
                     value={nama} 
                     onChange={(e) => setNama(e.target.value)} 
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900" 
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder:text-gray-500" 
                     required 
                   />
                   <p className="text-xs text-gray-500 mt-2">
@@ -136,7 +136,7 @@ export default function EditRW() {
                     placeholder="Contoh: Tompo Balang" 
                     value={lokasi} 
                     onChange={(e) => setLokasi(e.target.value)} 
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900" 
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder:text-gray-500" 
                     required 
                   />
                 </div>
@@ -152,7 +152,7 @@ export default function EditRW() {
                     placeholder="Kosongkan jika tidak ada data" 
                     value={totalPenduduk} 
                     onChange={(e) => setTotalPenduduk(e.target.value)} 
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900" 
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder:text-gray-500" 
                   />
                   <p className="text-xs text-gray-500 mt-2">
                     Masukkan jumlah penduduk dalam angka

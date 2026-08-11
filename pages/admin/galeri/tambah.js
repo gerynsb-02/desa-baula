@@ -188,7 +188,7 @@ export default function TambahGaleriPage() {
                     placeholder="Masukkan judul gambar (opsional)"
                     value={judul}
                     onChange={(e) => setJudul(e.target.value)}
-                    className="w-full border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-slate-900 transition-all duration-200"
+                    className="w-full border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-slate-900 transition-all duration-200 placeholder:text-slate-500"
                   />
                 </div>
 
@@ -205,7 +205,7 @@ export default function TambahGaleriPage() {
                     value={deskripsi}
                     onChange={(e) => setDeskripsi(e.target.value)}
                     rows={3}
-                    className="w-full border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-slate-900 resize-vertical transition-all duration-200"
+                    className="w-full border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-slate-900 resize-vertical transition-all duration-200 placeholder:text-slate-500"
                   />
                 </div>
 

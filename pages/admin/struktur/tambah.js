@@ -104,7 +104,7 @@ export default function TambahStrukturPage() {
                     placeholder="Masukkan nama lengkap"
                     value={nama}
                     onChange={(e) => setNama(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder:text-gray-500"
                     required
                   />
                 </div>
@@ -119,7 +119,7 @@ export default function TambahStrukturPage() {
                     placeholder="Contoh: Lurah, Sekretaris Lurah, dll"
                     value={jabatan}
                     onChange={(e) => setJabatan(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder:text-gray-500"
                     required
                   />
                 </div>
@@ -134,7 +134,7 @@ export default function TambahStrukturPage() {
                     placeholder="Contoh: 2021-2024"
                     value={masaJabatan}
                     onChange={(e) => setMasaJabatan(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder:text-gray-500"
                   />
                 </div>
 

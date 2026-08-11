@@ -1,4 +1,4 @@
-﻿// pages/admin/berita/edit.js
+// pages/admin/berita/edit.js
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { doc, getDoc, updateDoc } from 'firebase/firestore'
@@ -141,7 +141,7 @@ export default function EditBerita() {
                     placeholder="Masukkan judul berita"
                     value={judul}
                     onChange={(e) => setJudul(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder:text-gray-500"
                     required
                   />
                 </div>
@@ -156,7 +156,7 @@ export default function EditBerita() {
                     value={isi}
                     onChange={(e) => setIsi(e.target.value)}
                     rows={8}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 resize-vertical"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 resize-vertical placeholder:text-gray-500"
                     required
                   />
                 </div>
@@ -171,7 +171,7 @@ export default function EditBerita() {
                     placeholder="Contoh: Humas Kelurahan Baula"
                     value={sumber}
                     onChange={(e) => setSumber(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder:text-gray-500"
                     required
                   />
                 </div>

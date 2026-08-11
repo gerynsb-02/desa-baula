@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { doc, getDoc, updateDoc, setDoc } from 'firebase/firestore'
 import { db } from '../../../lib/firebase'
@@ -238,7 +238,7 @@ export default function EditData() {
                   value={sumber.sumber_data}
                   onChange={(e) => handleSumberChange('sumber_data', e.target.value)}
                   placeholder="Contoh: Kantor Kelurahan Baula"
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-900"
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-900 placeholder:text-gray-500"
                   required
                 />
               </div>

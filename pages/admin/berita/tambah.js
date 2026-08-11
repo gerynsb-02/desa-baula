@@ -1,4 +1,4 @@
-﻿// pages/admin/berita/tambah.js
+// pages/admin/berita/tambah.js
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { db, generateUniqueSlug } from '../../../lib/firebase'
@@ -94,7 +94,7 @@ export default function TambahBerita() {
                     placeholder="Masukkan judul berita" 
                     value={judul} 
                     onChange={(e) => setJudul(e.target.value)} 
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900" 
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder:text-gray-500" 
                     required 
                   />
                 </div>
@@ -109,7 +109,7 @@ export default function TambahBerita() {
                     value={isi} 
                     onChange={(e) => setIsi(e.target.value)} 
                     rows={8}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 resize-vertical" 
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 resize-vertical placeholder:text-gray-500" 
                     required 
                   />
                 </div>
@@ -124,7 +124,7 @@ export default function TambahBerita() {
                     placeholder="Contoh: Humas Kelurahan Baula" 
                     value={sumber} 
                     onChange={(e) => setSumber(e.target.value)} 
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900" 
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder:text-gray-500" 
                     required 
                   />
                 </div>
