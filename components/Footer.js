@@ -1,7 +1,35 @@
-﻿import Image from 'next/image'
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '../lib/firebase'
 
 export default function Footer() {
+  const [footerData, setFooterData] = useState({
+    alamat: 'Kelurahan Baula, Kec. Tellu Limpoe\nKab. Sidrap, Sulawesi Selatan',
+    kontak: '',
+    email: ''
+  })
+
+  useEffect(() => {
+    const fetchFooterData = async () => {
+      try {
+        const footerDoc = await getDoc(doc(db, 'settings', 'footer'))
+        if (footerDoc.exists()) {
+          const data = footerDoc.data()
+          setFooterData(prev => ({
+            alamat: data.alamat || prev.alamat,
+            kontak: data.kontak || prev.kontak,
+            email: data.email || prev.email
+          }))
+        }
+      } catch (error) {
+        console.error('Error fetching footer data:', error)
+      }
+    }
+    fetchFooterData()
+  }, [])
+
   return (
     <footer className="relative bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 text-white overflow-hidden">
       {/* Background Pattern */}
@@ -47,13 +75,46 @@ export default function Footer() {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-2">Alamat Kantor</h3>
-                  <p className="text-white/80 text-sm leading-relaxed">
-                    Kelurahan Baula, Kec. Tellu Limpoe<br />
-                    Kab. Sidrap, Sulawesi Selatan
+                  <p className="text-white/80 text-sm leading-relaxed whitespace-pre-line">
+                    {footerData.alamat}
                   </p>
                 </div>
               </div>
             </div>
+
+            {/* Informasi Kontak Card */}
+            {(footerData.kontak || footerData.email) && (
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 mt-4">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-emerald-500/20 p-3 rounded-lg flex-shrink-0">
+                    <svg className="w-6 h-6 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <div className="w-full">
+                    <h3 className="text-white font-semibold mb-2">Informasi Kontak</h3>
+                    <div className="space-y-2">
+                      {footerData.kontak && (
+                        <div className="flex items-center space-x-2 text-white/80 text-sm">
+                          <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                          </svg>
+                          <span>{footerData.kontak}</span>
+                        </div>
+                      )}
+                      {footerData.email && (
+                        <div className="flex items-center space-x-2 text-white/80 text-sm">
+                          <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/>
+                          </svg>
+                          <span>{footerData.email}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Quick Links */}

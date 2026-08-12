@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { collection, getDocs, orderBy, query } from 'firebase/firestore'
 import { db } from '../../lib/firebase'
 import Layout from '../../components/Layout'
@@ -7,40 +7,44 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   FaImages, FaTimes, FaChevronLeft, FaChevronRight, 
-  FaSpinner, FaExclamationTriangle, FaEye
+  FaSpinner, FaExclamationTriangle, FaEye, FaFilePdf,
+  FaExternalLinkAlt, FaBook
 } from 'react-icons/fa'
 
 export default function GaleriPage() {
   const [galeriList, setGaleriList] = useState([])
+  const [bukuList, setBukuList] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedImage, setSelectedImage] = useState(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
   const [error, setError] = useState(null)
-  const imagesPerPage = 12 // Number of images to show per page
+  const imagesPerPage = 12
 
   useEffect(() => {
-    const fetchGaleri = async () => {
+    const fetchAll = async () => {
       try {
         setLoading(true)
         setError(null)
-        const q = query(collection(db, 'galeri'), orderBy('createdAt', 'desc'))
-        const snapshot = await getDocs(q)
-        const data = snapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }))
-        setGaleriList(data)
+
+        const [galeriSnap, bukuSnap] = await Promise.all([
+          getDocs(query(collection(db, 'galeri'), orderBy('createdAt', 'desc'))),
+          getDocs(query(collection(db, 'buku_panduan'), orderBy('createdAt', 'desc'))),
+        ])
+
+        setGaleriList(galeriSnap.docs.map(doc => ({ id: doc.id, ...doc.data() })))
+        setBukuList(bukuSnap.docs.map(doc => ({ id: doc.id, ...doc.data() })))
       } catch (error) {
-        console.error('Error fetching gallery:', error)
+        console.error('Error fetching data:', error)
         setError('Gagal memuat galeri. Silakan coba lagi nanti.')
       } finally {
         setLoading(false)
       }
     }
 
-    fetchGaleri()
+    fetchAll()
   }, [])
+
 
   // Get current images for pagination
   const indexOfLastImage = currentPage * imagesPerPage
@@ -189,7 +193,7 @@ export default function GaleriPage() {
               </div>
             </motion.div>
 
-            {/* Gallery Grid */}
+            {/* ===== GALLERY GRID ===== */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -233,7 +237,7 @@ export default function GaleriPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="flex justify-center"
+                className="flex justify-center mb-16"
               >
                 <nav className="flex items-center gap-2 bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
                   <button
@@ -270,6 +274,101 @@ export default function GaleriPage() {
                     <FaChevronRight className="w-4 h-4" />
                   </button>
                 </nav>
+              </motion.div>
+            )}
+
+            {/* ===== HILIRASI KKN 116 UNHAS SECTION ===== */}
+            {bukuList.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="pt-6 border-t-2 border-dashed border-gray-200"
+              >
+                {/* Section Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="bg-gradient-to-r from-red-500 to-red-600 text-white p-3 rounded-xl shadow-lg">
+                    <FaBook className="text-xl" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Hilirasi KKN 116 Unhas</h2>
+                    <p className="text-sm text-gray-500">{bukuList.length} dokumen tersedia</p>
+                  </div>
+                </div>
+
+                {/* Buku Cards Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {bukuList.map((buku, index) => (
+                    <motion.div
+                      key={buku.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.08 }}
+                      className="group bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition-all duration-300 overflow-hidden flex flex-col"
+                    >
+                      {/* ===== COVER / PREVIEW AREA ===== */}
+                      {buku.thumbnailUrl ? (
+                        /* Foto sampul dari admin */
+                        <div className="relative w-full h-52 overflow-hidden bg-gray-100">
+                          <Image
+                            src={buku.thumbnailUrl}
+                            alt={`Sampul ${buku.judul}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            unoptimized
+                          />
+                          {/* Gradient overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                          {/* PDF badge */}
+                          <div className="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-lg flex items-center gap-1 shadow-md">
+                            <FaFilePdf className="text-xs" />
+                            PDF
+                          </div>
+                        </div>
+                      ) : (
+                        /* Placeholder stylized jika belum ada foto sampul */
+                        <div className="w-full h-52 bg-gradient-to-br from-red-600 via-red-500 to-rose-600 flex flex-col items-center justify-center relative overflow-hidden">
+                          {/* Decorative circles */}
+                          <div className="absolute -top-8 -right-8 w-32 h-32 bg-white/10 rounded-full" />
+                          <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-white/10 rounded-full" />
+                          {/* Icon */}
+                          <FaFilePdf className="text-6xl text-white/70 mb-2 relative z-10" />
+                          <span className="text-white/80 text-xs font-semibold tracking-widest uppercase relative z-10">
+                            KKN 116 Unhas
+                          </span>
+                        </div>
+                      )}
+
+                      {/* ===== CARD BODY ===== */}
+                      <div className="p-5 flex flex-col flex-1">
+                        <h3 className="font-semibold text-gray-900 leading-snug line-clamp-2 group-hover:text-red-700 transition-colors duration-200 text-base mb-1">
+                          {buku.judul}
+                        </h3>
+                        {buku.deskripsi && (
+                          <p className="text-sm text-gray-500 line-clamp-2 mb-2">{buku.deskripsi}</p>
+                        )}
+                        {buku.namaFile && (
+                          <p className="text-xs text-gray-400 truncate mb-3">{buku.namaFile}</p>
+                        )}
+
+                        {/* Spacer agar tombol selalu di bawah */}
+                        <div className="flex-1" />
+
+                        {/* Tombol: buka via signed URL agar tidak kena 401 Cloudinary */}
+                        <a
+                          href={`/api/pdf-signed-url?publicId=${encodeURIComponent(buku.path)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-xl transition-all duration-200 hover:shadow-md active:scale-95"
+                        >
+                          <FaFilePdf className="text-sm flex-shrink-0" />
+                          Buka Dokumen
+                          <FaExternalLinkAlt className="text-xs ml-1 flex-shrink-0" />
+                        </a>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             )}
 

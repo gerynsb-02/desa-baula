@@ -51,6 +51,12 @@ const linkGroups = [
     links: [
       { href: '/admin/data', label: 'Kelola Data', icon: <FiBarChart2 className="w-5 h-5" />, badge: null }
     ]
+  },
+  {
+    title: 'Pengaturan',
+    links: [
+      { href: '/admin/pengaturan', label: 'Pengaturan Umum', icon: <FiSettings className="w-5 h-5" />, badge: null }
+    ]
   }
 ]
 
