@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import Head from 'next/head'
 import { Bar, Pie, Doughnut } from 'react-chartjs-2'
@@ -437,7 +437,7 @@ export default function Data() {
                 Pembagian administratif kelurahan
               </motion.p>
             </div>
-                                      <div className="space-y-4 sm:space-y-6">
+                             <div className="space-y-4 sm:space-y-6">
                <div className="flex justify-between items-center p-4 sm:p-6 bg-gradient-to-r from-green-50 to-green-100 rounded-xl border border-green-200">
                  <span className="text-sm sm:text-base font-medium text-gray-700">Jumlah RW</span>
                  <span className="text-lg sm:text-xl font-bold text-green-600">
@@ -450,6 +450,22 @@ export default function Data() {
                    {penduduk.jumlah_rt} RT
                  </span>
                </div>
+               {penduduk.jumlah_lingkungan > 0 && (
+                 <div className="flex justify-between items-center p-4 sm:p-6 bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl border border-purple-200">
+                   <span className="text-sm sm:text-base font-medium text-gray-700">Jumlah Lingkungan</span>
+                   <span className="text-lg sm:text-xl font-bold text-purple-600">
+                     {penduduk.jumlah_lingkungan} Lingkungan
+                   </span>
+                 </div>
+               )}
+               {penduduk.jumlah_posyandu > 0 && (
+                 <div className="flex justify-between items-center p-4 sm:p-6 bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl border border-orange-200">
+                   <span className="text-sm sm:text-base font-medium text-gray-700">Jumlah Posyandu</span>
+                   <span className="text-lg sm:text-xl font-bold text-orange-600">
+                     {penduduk.jumlah_posyandu} Posyandu
+                   </span>
+                 </div>
+               )}
              </div>
           </div>
 

@@ -157,12 +157,12 @@ function AlurTab({ steps, onChange }) {
                 <div>
                   <label className="text-xs font-semibold text-slate-500 mb-1 block">Nama Step</label>
                   <input value={step.title} onChange={e => updateStep(i, 'title', e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                    className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition placeholder:text-slate-500" />
                 </div>
                 <div>
                   <label className="text-xs font-semibold text-slate-500 mb-1 block">Deskripsi</label>
                   <input value={step.description} onChange={e => updateStep(i, 'description', e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                    className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition placeholder:text-slate-500" />
                 </div>
                 <div>
                   <label className="text-xs font-semibold text-slate-500 mb-1 block">Warna</label>
@@ -239,7 +239,7 @@ function JenisTab({ items, onChange }) {
       {/* Search + Add */}
       <div className="flex gap-3">
         <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder="Cari jenis layanan..."
-          className="flex-1 px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+          className="flex-1 px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition placeholder:text-slate-500" />
         <button onClick={addItem}
           className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-green-600 to-blue-600 rounded-xl hover:from-green-700 hover:to-blue-700 shadow-sm transition-all">
           <FiPlus className="w-4 h-4" /> Tambah Layanan
@@ -281,7 +281,7 @@ function JenisTab({ items, onChange }) {
                     <div>
                       <label className="text-xs font-semibold text-slate-600 mb-1 block">Nama Layanan</label>
                       <input value={item.title} onChange={e => updateItem(i, 'title', e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-400 transition placeholder:text-slate-500" />
                     </div>
                     <div>
                       <label className="text-xs font-semibold text-slate-600 mb-1 block">Warna Ikon</label>
@@ -293,7 +293,7 @@ function JenisTab({ items, onChange }) {
                     <div className="sm:col-span-2">
                       <label className="text-xs font-semibold text-slate-600 mb-1 block">Deskripsi</label>
                       <textarea value={item.description} onChange={e => updateItem(i, 'description', e.target.value)} rows={2}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-400 transition resize-none" />
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-400 transition resize-none placeholder:text-slate-500" />
                     </div>
                   </div>
 
@@ -305,7 +305,7 @@ function JenisTab({ items, onChange }) {
                         <div key={ri} className="flex items-center gap-2">
                           <span className="w-5 h-5 bg-green-100 text-green-700 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">{ri + 1}</span>
                           <input value={req} onChange={e => updateReq(i, ri, e.target.value)}
-                            className="flex-1 px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                            className="flex-1 px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-green-400 transition placeholder:text-slate-500" />
                           <button onClick={() => removeReq(i, ri)} className="p-2 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg transition">
                             <FiTrash2 className="w-3.5 h-3.5" />
                           </button>
@@ -367,7 +367,7 @@ function JamTab({ items, onChange }) {
                 <div>
                   <label className="text-xs font-semibold text-slate-500 mb-1 block">Nama Hari</label>
                   <input value={item.day} onChange={e => updateItem(i, 'day', e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                    className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition placeholder:text-slate-500" />
                 </div>
                 {!item.isLibur && (
                   <>
@@ -375,19 +375,19 @@ function JamTab({ items, onChange }) {
                       <label className="text-xs font-semibold text-slate-500 mb-1 block">Jam Pagi</label>
                       <input value={item.hours} onChange={e => updateItem(i, 'hours', e.target.value)}
                         placeholder="07:30 - 12:00 WITA"
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition placeholder:text-slate-500" />
                     </div>
                     <div>
                       <label className="text-xs font-semibold text-slate-500 mb-1 block">Keterangan Istirahat</label>
                       <input value={item.breakTime} onChange={e => updateItem(i, 'breakTime', e.target.value)}
                         placeholder="Istirahat 12:00 - 13:00"
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition placeholder:text-slate-500" />
                     </div>
                     <div>
                       <label className="text-xs font-semibold text-slate-500 mb-1 block">Jam Sore</label>
                       <input value={item.afternoon} onChange={e => updateItem(i, 'afternoon', e.target.value)}
                         placeholder="13:00 - 16:00 WITA"
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition" />
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition placeholder:text-slate-500" />
                     </div>
                   </>
                 )}

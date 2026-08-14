@@ -18,6 +18,8 @@ export default function EditData() {
     perempuan: '',
     jumlah_kk: '',
     jumlah_rt: '',
+    jumlah_lingkungan: '',
+    jumlah_posyandu: '',
     luas_wilayah: ''
   })
   
@@ -80,6 +82,8 @@ export default function EditData() {
           perempuan: parseInt(penduduk.perempuan),
           jumlah_kk: parseInt(penduduk.jumlah_kk),
           jumlah_rt: parseInt(penduduk.jumlah_rt),
+          jumlah_lingkungan: parseInt(penduduk.jumlah_lingkungan) || 0,
+          jumlah_posyandu: parseInt(penduduk.jumlah_posyandu) || 0,
           luas_wilayah: parseFloat(penduduk.luas_wilayah)
         })
       } else {
@@ -90,6 +94,8 @@ export default function EditData() {
           perempuan: parseInt(penduduk.perempuan),
           jumlah_kk: parseInt(penduduk.jumlah_kk),
           jumlah_rt: parseInt(penduduk.jumlah_rt),
+          jumlah_lingkungan: parseInt(penduduk.jumlah_lingkungan) || 0,
+          jumlah_posyandu: parseInt(penduduk.jumlah_posyandu) || 0,
           luas_wilayah: parseFloat(penduduk.luas_wilayah)
         })
       }
@@ -208,6 +214,30 @@ export default function EditData() {
                     onChange={(e) => handlePendudukChange('jumlah_rt', e.target.value)}
                     className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-900"
                     required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Jumlah Lingkungan
+                  </label>
+                  <input
+                    type="number"
+                    value={penduduk.jumlah_lingkungan}
+                    onChange={(e) => handlePendudukChange('jumlah_lingkungan', e.target.value)}
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-900"
+                    placeholder="Jumlah lingkungan"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Jumlah Posyandu
+                  </label>
+                  <input
+                    type="number"
+                    value={penduduk.jumlah_posyandu}
+                    onChange={(e) => handlePendudukChange('jumlah_posyandu', e.target.value)}
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-900"
+                    placeholder="Jumlah posyandu"
                   />
                 </div>
                 <div>

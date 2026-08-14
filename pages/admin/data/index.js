@@ -216,6 +216,8 @@ export default function DataManagement() {
                   <div className="space-y-4">
                     <DataItem label="Jumlah RW" value={rwData.length} color="green" />
                     <DataItem label="Jumlah RT" value={penduduk.jumlah_rt} color="blue" />
+                    <DataItem label="Jumlah Lingkungan" value={penduduk.jumlah_lingkungan ?? '-'} color="purple" />
+                    <DataItem label="Jumlah Posyandu" value={penduduk.jumlah_posyandu ?? '-'} color="orange" />
                     <DataItem label="Luas Wilayah" value={`${penduduk.luas_wilayah} km²`} color="purple" />
                   </div>
                 </div>
